@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TopdownCharacter = Core.Characters.TopdownCharacter;
@@ -6,6 +7,7 @@ namespace Core.PlayerCharacterInput
 {
     public class PlayerCharacterInput : MonoBehaviour
     {
+        [field: SerializeField] public CinemachineCamera CinemachineCamera { get; private set; }
         [field: SerializeField] public TopdownCharacter NavMeshAgent { get; private set; }
         [field: SerializeField] public InputActionReference MovementInputActionReference { get; private set; }
         [field: SerializeField] public InputActionReference LookInputActionReference { get; private set; }
@@ -29,6 +31,25 @@ namespace Core.PlayerCharacterInput
             SprintAction.Enable();
         }
 
+        private void OnApplicationPause(bool pause)
+        {
+            if (!pause)
+            {
+                MovementInputAction.Enable();
+                LookInputAction.Enable();
+                MousePositionAction.Enable();
+                SitAction.Enable();
+                SprintAction.Enable();
+            }
+            else
+            {
+                MovementInputAction.Disable();
+                LookInputAction.Disable();
+                MousePositionAction.Disable();
+                SitAction.Disable();
+                SprintAction.Disable();
+            }
+        }
         private void OnEnable()
         {
             MovementInputAction.started += OnInpuActionStart;

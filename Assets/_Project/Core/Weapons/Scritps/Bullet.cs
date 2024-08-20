@@ -42,6 +42,7 @@ namespace Core.Weapons
                 {
                     GameObject hittenObject = hitInfo.collider.gameObject;         
                     shotInfo.hittenObject = hittenObject;
+                    shotInfo.endPosition = hitInfo.point;
                     Shot?.Invoke(shotInfo);
                     
                     if (hittenObject.TryGetComponent(out Health health))

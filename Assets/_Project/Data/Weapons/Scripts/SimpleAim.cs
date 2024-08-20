@@ -8,8 +8,6 @@ namespace Data.Weapons
     public class SimpleAim : Aimable
     {
         [field: SerializeField] public Firearm Weapon { get; private set; }
-        [field: SerializeField] public float DefualtSpread { get; private set; }
-        [field: SerializeField] public float AimedSpread { get; private set; }
         [field: SerializeField] public SpeedModificator AimedSpeedModifier { get; private set; } = new() 
         {
             AccelerationClamp = 8,

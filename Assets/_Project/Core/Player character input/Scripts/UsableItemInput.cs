@@ -20,12 +20,28 @@ namespace Core.PlayerCharacterInput
         public InputAction ReloadAction => ReloadActionReference.action;
 
         public Useble Weapon => UsableReference.Value;
-        
+
         private void Awake()
         {
             AttackAction.Enable();
             AimAction.Enable();
             ReloadAction.Enable();
+        }
+
+        private void OnApplicationPause(bool pause)
+        {
+            if (!pause) 
+            {
+                AttackAction.Enable();
+                AimAction.Enable();
+                ReloadAction.Enable();
+            }
+            else
+            {
+                AttackAction.Disable();
+                AimAction.Disable();
+                ReloadAction.Disable();
+            }
         }
 
         private void OnEnable()
