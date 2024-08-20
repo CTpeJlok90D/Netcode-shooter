@@ -1,0 +1,22 @@
+{
+    "name": "Core.PlayerCharacterInput",
+    "rootNamespace": "Core.PlayerCharacterInput",
+    "references": [
+        "GUID:1491147abca9d7d4bb7105af628b223e",
+        "GUID:3b8ed52f1b5c64994af4c4e0aa4b6c4b",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:ae28a16eb31805a4891875609279641f",
+        "GUID:abc5631a2c7e33e409d8d70ea55961d3",
+        "GUID:ab855d59aad52034bbbb0daa059b40d6",
+        "GUID:f731d414742779245bbff6eefc68b580"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

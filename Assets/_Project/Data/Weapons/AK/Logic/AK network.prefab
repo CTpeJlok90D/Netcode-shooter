@@ -1,0 +1,239 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1449318282016298980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2258225226171010398}
+  - component: {fileID: 1535879605299983839}
+  - component: {fileID: 9103513635288412745}
+  - component: {fileID: 8926895601526066485}
+  - component: {fileID: 8649480988456476197}
+  - component: {fileID: 3669564695648176113}
+  - component: {fileID: 1195425673046501753}
+  - component: {fileID: 54858614713577387}
+  m_Layer: 3
+  m_Name: AK network
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2258225226171010398
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449318282016298980}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 144354099385312287}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1535879605299983839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449318282016298980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1368875851
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+--- !u!114 &9103513635288412745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449318282016298980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4053de76f80662c45961c2a1354c4ca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Useble>k__BackingField: {fileID: 8649480988456476197}
+  <AttackPattern>k__BackingField: {fileID: 11400000, guid: 08f885bae0377054b9a00ed8e7c9c6f8, type: 2}
+  <AttackPoint>k__BackingField: {fileID: 144354099385312287}
+  <RateOfFire>k__BackingField: 6
+  <BullectConfiguration>k__BackingField:
+    ShotPoint: {fileID: 144354099385312287}
+    Damage: 34
+    MaxDistance: 500
+    Speed: 80
+    SpreadPerSpeed:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0.25920916
+        outSlope: 0.25920916
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.39527586
+      - serializedVersion: 3
+        time: 4
+        value: 4
+        inSlope: 0.8427868
+        outSlope: 0.8427868
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 1
+      - serializedVersion: 3
+        time: 6.2416663
+        value: 5.09434
+        inSlope: 0.45859042
+        outSlope: 0.45859042
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.949814
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  <MaxSpeedToAttack>k__BackingField: 4
+--- !u!114 &8926895601526066485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449318282016298980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a294e8c8c35c4c47b202875acf7b1e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Weapon>k__BackingField: {fileID: 9103513635288412745}
+  <DefualtSpread>k__BackingField: 1
+  <AimedSpread>k__BackingField: 0
+  <AimedSpeedModifier>k__BackingField:
+    AccelerationClamp: 8
+    MaxSpeedClamp: 1.5
+--- !u!114 &8649480988456476197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449318282016298980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e6f7fcc3eb8bf946b5b769f4d74d3b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <View>k__BackingField:
+    <ViewReference>k__BackingField:
+      m_AssetGUID: ebaad61653c619748a390b7e0bf0c87f
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    <UseAnimation>k__BackingField:
+      m_AssetGUID: 441a9017adfa30340844d46959269e85
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+--- !u!114 &3669564695648176113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449318282016298980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c01cddcb3329bbb42948e9139a647fc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Useble>k__BackingField: {fileID: 8649480988456476197}
+--- !u!114 &1195425673046501753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449318282016298980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 500a75bae3b4642429c56f993a284852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Firearm>k__BackingField: {fileID: 9103513635288412745}
+  <Ammo>k__BackingField:
+    m_InternalValue: 30
+  <MaxAmmo>k__BackingField: 30
+  <AmmoConsumptionPetAttack>k__BackingField: 1
+--- !u!114 &54858614713577387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449318282016298980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 223bde3e1c515994398f369c46cabe69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Clip>k__BackingField: {fileID: 1195425673046501753}
+  <ReloadTime>k__BackingField: 3
+  <Firearm>k__BackingField: {fileID: 9103513635288412745}
+  <ReloadSpeedModifier>k__BackingField:
+    AccelerationClamp: 8
+    MaxSpeedClamp: 2
+--- !u!1 &6019091080934720406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 144354099385312287}
+  m_Layer: 3
+  m_Name: Attack point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &144354099385312287
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6019091080934720406}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.236, z: 0.585}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2258225226171010398}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

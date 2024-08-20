@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f1998df7a857d4187aaa2b8834a171, type: 3}
+  m_Name: Semi automatic attack pattern
+  m_EditorClassIdentifier: 
+  <Expenditure>k__BackingField: 1
+  <RateOfFire>k__BackingField: 3

@@ -1,0 +1,20 @@
+{
+    "name": "View.Weapons.Tracer",
+    "rootNamespace": "View.Weapons.Tracer",
+    "references": [
+        "GUID:3b8ed52f1b5c64994af4c4e0aa4b6c4b",
+        "GUID:1491147abca9d7d4bb7105af628b223e",
+        "GUID:d39b55d042f7439428b87e976f7bb112",
+        "GUID:ab855d59aad52034bbbb0daa059b40d6",
+        "GUID:ae28a16eb31805a4891875609279641f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
