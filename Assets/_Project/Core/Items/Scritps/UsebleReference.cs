@@ -23,5 +23,14 @@ namespace Core.Items
                 Value.transform.rotation = transform.rotation;
             }
         }
+
+        public override void OnDestroy()
+        {
+            base.OnDestroy();
+            if (NetworkManager.IsServer)
+            {
+                Value.SetOwner(null);
+            }
+        }
     }
 }

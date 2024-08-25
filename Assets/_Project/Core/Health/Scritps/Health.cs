@@ -10,6 +10,7 @@ namespace Core.HealthSystem
     {
         [field: SerializeField] public float Max { get; private set; } = 100;
         private NetVariable<float> _value;
+        public DamageInfo LastDamageInfo { get; private set; }
 
         public float Value
         {
@@ -34,6 +35,7 @@ namespace Core.HealthSystem
 
         public void DealDamage(DamageInfo info)
         {
+            LastDamageInfo = info;
             if (NetworkManager.IsServer == false)
             {
                 return;
@@ -71,6 +73,7 @@ namespace Core.HealthSystem
             NetworkObject.Despawn(true);
         }
 
+        [Rpc(SendTo.Everyone)]
         private void Death_RPC()
         {
             Death?.Invoke();

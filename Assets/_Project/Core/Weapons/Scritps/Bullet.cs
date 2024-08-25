@@ -17,7 +17,7 @@ namespace Core.Weapons
         private Task _spraySpreadFallRate;
         private bool _isDestroyed;
 
-        public float SprayDistance(float senderSpeed) => _configuration.SpreadPerSpeed.Evaluate(senderSpeed) * _configuration.SpreadPerSpray.Evaluate(_bulletNumber);
+        public float SprayDistance(float senderSpeed) => _configuration.SpreadPerSpeed.Evaluate(senderSpeed) + _configuration.SpreadPerSpray.Evaluate(_bulletNumber);
 
         public Bullet(BulletConfiguration configuration)
         {

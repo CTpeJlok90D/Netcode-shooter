@@ -105,7 +105,10 @@ namespace Core.PlayerCharacterInput
         {
             if (hasFocus == false)
             {
-                _aimable.IsAiming = false;
+                if (_aimable != null) 
+                {
+                    _aimable.IsAiming = false;
+                }
                 if (Weapon.IsUsing)
                 {
                     Weapon.StopAttack();

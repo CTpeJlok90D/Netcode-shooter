@@ -1,12 +1,13 @@
+using Core.HealthSystem;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace View.Health
+namespace View.HealthSystem
 {
     public class HealthBar : MonoBehaviour
     {
         [SerializeField] private Image _fillImage;
-        [SerializeField] private Core.HealthSystem.Health _health;
+        [SerializeField] private Health _health;
 
         private void OnEnable()
         {

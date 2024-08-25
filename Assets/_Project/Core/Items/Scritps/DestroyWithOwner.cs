@@ -1,3 +1,4 @@
+using System;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -7,14 +8,19 @@ namespace Core.Items
     {
         [field: SerializeField] public Useble Useble { get; private set; }
 
-        private void Update()
+        private void OnEnable()
         {
-            if (NetworkManager.Singleton.IsServer == false)
-            {
-                return;
-            }
+            Useble.OwnerChanged += OnOwnerChange;
+        }
 
-            if (Useble.Owner == null)
+        private void OnDisable()
+        {
+            Useble.OwnerChanged -= OnOwnerChange;
+        }
+
+        private void OnOwnerChange()
+        {
+            if (Useble.Owner == null) 
             {
                 Useble.NetworkObject.Despawn(true);
             }
