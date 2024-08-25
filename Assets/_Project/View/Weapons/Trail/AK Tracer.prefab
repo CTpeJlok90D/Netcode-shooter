@@ -133,7 +133,9 @@ GameObject:
   - component: {fileID: 3064569222420190902}
   - component: {fileID: -3666055941163031459}
   - component: {fileID: 4994263442852187798}
-  m_Layer: 0
+  - component: {fileID: 3430950219036372916}
+  - component: {fileID: 980183980040725680}
+  m_Layer: 7
   m_Name: AK Tracer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,3 +299,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <TrailRenderer>k__BackingField: {fileID: 3064569222420190902}
+--- !u!114 &3430950219036372916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7993726290105260748}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e14ae6a4e2f4ff34c81623aa314dc52f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _meshRenderers:
+  - {fileID: 3064569222420190902}
+  _components: []
+  _gameObjects:
+  - {fileID: 5806402242249638152}
+  _autoFillRenderers: 0
+--- !u!135 &980183980040725680
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7993726290105260748}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.517
+  m_Center: {x: 0, y: 0, z: 0.017}

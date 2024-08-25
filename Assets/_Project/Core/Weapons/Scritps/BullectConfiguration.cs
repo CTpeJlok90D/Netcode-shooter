@@ -11,5 +11,7 @@ namespace Core.Weapons
         public float MaxDistance;
         public float Speed;
         public AnimationCurve SpreadPerSpeed;
+        public AnimationCurve SpreadPerSpray;
+        public float SpraySpreadFallRate = 2f;
     }
 }

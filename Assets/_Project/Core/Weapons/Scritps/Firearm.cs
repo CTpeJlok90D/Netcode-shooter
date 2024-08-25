@@ -54,6 +54,15 @@ namespace Core.Weapons
 
         private void Update()
         {
+            ValidateAttack();
+        }
+
+        private void ValidateAttack() 
+        {
+            if (AttackPattern == null || TopdownCharacter == null) 
+            {
+                return;
+            }
             if ((AttackPattern.CanAttack == false || TopdownCharacter.Speed > MaxSpeedToAttack) && Useble.IsUsing)
             {
                 StopAttack();

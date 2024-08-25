@@ -7,7 +7,6 @@ namespace View.Health
     {
         [SerializeField] private Image _fillImage;
         [SerializeField] private Core.HealthSystem.Health _health;
-        [SerializeField] private float _oneHealthPointSize;
 
         private void OnEnable()
         {
@@ -31,13 +30,7 @@ namespace View.Health
         private void OnHealthValueChange(float previousValue, float newValue) => ValidateFill();
         private void ValidateFill()
         {
-            Vector3 newScale = new()
-            {
-                x = _fillImage.transform.localScale.x * _health.Value * _oneHealthPointSize,
-                y = _fillImage.transform.localScale.y,
-                z = _fillImage.transform.localScale.z,
-            };
-            _fillImage.transform.localScale = newScale;
+            _fillImage.fillAmount = _health.Value / _health.Max;
         }
     }
 }

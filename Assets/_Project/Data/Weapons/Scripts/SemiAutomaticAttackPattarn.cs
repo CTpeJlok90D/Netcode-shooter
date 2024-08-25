@@ -30,7 +30,7 @@ namespace Data.Weapons
 
             if (NetworkManager.Singleton.IsServer)
             {
-                _ = Bullet.Shoot(Firearm.TopdownCharacter);
+                _ = Bullet.Shoot(Firearm.TopdownCharacter.gameObject, Firearm.TopdownCharacter.Velocity.magnitude, Firearm.TopdownCharacter.LookPoint);
                 Attacked?.Invoke();
             }
             _ = DelayBetweenAttacks();

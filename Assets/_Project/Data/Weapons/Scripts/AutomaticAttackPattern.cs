@@ -41,7 +41,7 @@ namespace Data.Weapons
 
                 while (_isAttacking)
                 {
-                    _ = Bullet.Shoot(Firearm.TopdownCharacter);
+                    _ = Bullet.Shoot(Firearm.TopdownCharacter.gameObject, Firearm.TopdownCharacter.Velocity.magnitude, Firearm.TopdownCharacter.LookPoint);
                     Attacked?.Invoke();
 
                     _attackDelay = true;

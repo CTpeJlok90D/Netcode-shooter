@@ -31,7 +31,14 @@ namespace Data.Weapons
 
         private void Update()
         {
-            if (Vector3.Distance(Weapon.transform.position, Weapon.TopdownCharacter.LookPoint) < Weapon.BullectConfiguration.MaxDistance) 
+            ValidatePosition();
+        }
+
+        private void ValidatePosition() 
+        {
+            if (Weapon == null || Weapon.TopdownCharacter == null) return;
+
+            if (Vector3.Distance(Weapon.transform.position, Weapon.TopdownCharacter.LookPoint) < Weapon.BullectConfiguration.MaxDistance)
             {
                 _lookTransform.position = Weapon.TopdownCharacter.LookPoint;
             }

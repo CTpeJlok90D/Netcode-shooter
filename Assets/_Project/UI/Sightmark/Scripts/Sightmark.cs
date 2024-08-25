@@ -58,7 +58,10 @@ namespace UI.Sightmark
                 return;
             }
 
-            float spread = _firearm.BullectConfiguration.SpreadPerSpeed.Evaluate(_character.Velocity.magnitude);
+            BulletConfiguration config = _firearm.BullectConfiguration;
+            Bullet bullet = _firearm.AttackPattern.Bullet;
+
+            float spread = bullet.SprayDistance(_character.Velocity.magnitude);
             Animator.SetFloat(FloatValueName, spread);
             transform.position = MousePosition.action.ReadValue<Vector2>();
         }

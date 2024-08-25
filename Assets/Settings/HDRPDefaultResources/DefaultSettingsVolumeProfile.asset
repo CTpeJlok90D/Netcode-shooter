@@ -990,48 +990,8 @@ MonoBehaviour:
   m_Name: DefaultSettingsVolumeProfile
   m_EditorClassIdentifier: 
   components:
-  - {fileID: 7686318427622180703}
-  - {fileID: -1016694868962581565}
-  - {fileID: 7502528774814404555}
-  - {fileID: 7542669330009093999}
-  - {fileID: 1501199423866068322}
-  - {fileID: 5315503232242033309}
-  - {fileID: 1932259527246508038}
-  - {fileID: 448115243408767295}
-  - {fileID: -7089757308646879465}
-  - {fileID: -8500501345142028434}
-  - {fileID: 2097231660816403494}
-  - {fileID: -5100897104483730313}
-  - {fileID: 1118433869569598084}
-  - {fileID: 7962052879528299195}
-  - {fileID: 2139277281003525900}
-  - {fileID: 4756310533927504067}
-  - {fileID: 4950688859726214608}
-  - {fileID: -1184866019772679722}
-  - {fileID: 2536561250548867867}
-  - {fileID: -5798392234135387433}
-  - {fileID: -9016089967297217105}
-  - {fileID: -9079749212845246089}
-  - {fileID: 402059556124605701}
-  - {fileID: -3958891581350977738}
-  - {fileID: -4329339221777921726}
-  - {fileID: -1113027991169060455}
-  - {fileID: -5760493547200551046}
-  - {fileID: 8839796741654360644}
-  - {fileID: 7447388523400322060}
-  - {fileID: -8524411296569108552}
-  - {fileID: 3257887875905506782}
-  - {fileID: -9192009407334186110}
-  - {fileID: 7401509911174372624}
-  - {fileID: -608624977632488108}
-  - {fileID: -4754658498886859785}
-  - {fileID: 4725557419583185831}
-  - {fileID: 6542068850958075812}
-  - {fileID: 3689146201638017702}
-  - {fileID: 431677300268311137}
-  - {fileID: -739947656401216452}
-  - {fileID: -4966568556474376372}
   - {fileID: -6159838527804768247}
+  - {fileID: 2921930547910177746}
 --- !u!114 &402059556124605701
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1557,6 +1517,53 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 0
   saturation:
+    m_OverrideState: 1
+    m_Value: 0
+--- !u!114 &2921930547910177746
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b2db86121404754db890f4c8dfe81b2, type: 3}
+  m_Name: Bloom
+  m_EditorClassIdentifier: 
+  active: 1
+  skipIterations:
+    m_OverrideState: 0
+    m_Value: 1
+  threshold:
+    m_OverrideState: 1
+    m_Value: 0.9
+  intensity:
+    m_OverrideState: 1
+    m_Value: 1
+  scatter:
+    m_OverrideState: 1
+    m_Value: 0.7
+  clamp:
+    m_OverrideState: 1
+    m_Value: 65472
+  tint:
+    m_OverrideState: 1
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+  highQualityFiltering:
+    m_OverrideState: 1
+    m_Value: 0
+  downscale:
+    m_OverrideState: 0
+    m_Value: 0
+  maxIterations:
+    m_OverrideState: 0
+    m_Value: 6
+  dirtTexture:
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
+    dimension: 1
+  dirtIntensity:
     m_OverrideState: 1
     m_Value: 0
 --- !u!114 &3257887875905506782

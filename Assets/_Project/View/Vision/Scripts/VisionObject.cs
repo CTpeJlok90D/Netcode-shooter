@@ -5,10 +5,13 @@ namespace View.Vision
 {
     internal class VisionObject : MonoBehaviour 
     {
+        internal const int LayerIndex = 7;
+
         [SerializeField] private Renderer[] _meshRenderers;
         [SerializeField] private MonoBehaviour[] _components;
         [SerializeField] private GameObject[] _gameObjects;
         [SerializeField] private bool _autoFillRenderers;
+        [field: SerializeField] internal VisionObjectRayPoint[] Colliders { get; private set; }
 
         private bool _inVisionZone;
 
@@ -83,6 +86,10 @@ namespace View.Vision
             if ((_meshRenderers == null || _meshRenderers.Count() == 0) && _autoFillRenderers) 
             {
                 _meshRenderers = GetComponentsInChildren<Renderer>();
+            }
+            if (gameObject.layer != LayerIndex) 
+            {
+                gameObject.layer = LayerIndex;
             }
         }
 #endif
