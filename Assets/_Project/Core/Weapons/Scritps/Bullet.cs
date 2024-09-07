@@ -1,13 +1,13 @@
 using System;
 using System.Threading.Tasks;
-using Core.Characters;
 using Core.HealthSystem;
 using Unity.Netcode;
 using UnityEngine;
+using Core.Netrandom;
 
 namespace Core.Weapons
 {
-    public class Bullet
+    public sealed class Bullet
     {
         public delegate void ShotListener(ShotInfo info);
         public event ShotListener Shot;
@@ -36,7 +36,7 @@ namespace Core.Weapons
             {
                 float spreadDistance = SprayDistance(senderSpeed);
                 float spreadRange = spreadDistance/2;
-                Vector3 spreadOffcet = new Vector3(UnityEngine.Random.Range(-spreadRange, spreadRange), UnityEngine.Random.Range(-spreadRange, spreadRange), UnityEngine.Random.Range(-spreadRange, spreadRange));
+                Vector3 spreadOffcet = new Vector3(NetRandom.Range(-spreadRange, spreadRange), NetRandom.Range(-spreadRange, spreadRange), NetRandom.Range(-spreadRange, spreadRange));
 
                 Transform shotTransform = _configuration.ShotPoint;
                 Vector3 endPoint = targetPoint + spreadOffcet;

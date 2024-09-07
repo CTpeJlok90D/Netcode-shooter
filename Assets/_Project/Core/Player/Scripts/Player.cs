@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using Unity.Netcode;
-using UnityEditor;
 using UnityEngine;
 
 namespace Core.Players
@@ -30,7 +29,7 @@ namespace Core.Players
                 _local = this;
                 LocalPlayerSpawned?.Invoke(this);
             }
-            
+
             Join?.Invoke(this);
         }
 
@@ -44,20 +43,5 @@ namespace Core.Players
             }
             Left?.Invoke(this);
         }
-
-#if UNITY_EDITOR
-        [CustomEditor(typeof(Player))]
-        private class CEditor : Editor 
-        {
-            private Player player => target as Player;
-            public override void OnInspectorGUI()
-            {
-                GUI.enabled = false;
-                EditorGUILayout.PropertyField(serializedObject.FindProperty("m_Script"));
-                GUI.enabled = true;
-                EditorGUILayout.Space(3);
-            }
-        }
-#endif
     }
 }

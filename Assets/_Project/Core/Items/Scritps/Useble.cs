@@ -7,6 +7,7 @@ namespace Core.Items
     public class Useble : NetworkBehaviour
     {
         [field: SerializeField] public UsebleView View { get; private set; }
+        [field: SerializeField] public ItemType ItemType { get; private set; }
 
         public GameObject Owner { get; private set; }
         public bool IsUsing { get; private set; }

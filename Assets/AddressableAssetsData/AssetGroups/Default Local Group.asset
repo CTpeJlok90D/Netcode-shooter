@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: ec0b4bc76da2d394fa2e9bce1db30604
   m_SerializeEntries:
+  - m_GUID: 08c637b65155dd749b4aac2043c8a759
+    m_Address: Assets/_Project/Data/Weapons/Pistol/View/AK View.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1a495c858e010c4438479ff37c318db9
     m_Address: Assets/_Project/Tests/Materials/Textures/1x1_grid_quarter_lines.png
     m_ReadOnly: 0
@@ -57,6 +62,16 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5a7ca585a9b2b3c4587125916713263d
     m_Address: Assets/_Project/Tests/Materials/Blue_Prototype.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5ae9d14ed3ae0b14e9915220cb3a3216
+    m_Address: Assets/_Project/Data/Weapons/Pistol/Pistol animations override.overrideController
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5ff9ca79c157aed4caa369b916fc376b
+    m_Address: Assets/_Project/Data/Weapons/Pistol/View/Pistol_E.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

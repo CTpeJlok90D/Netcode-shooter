@@ -2,22 +2,18 @@ using UnityEngine;
 using Unity.Netcode;
 using Core.PlayerSpawning;
 using Zenject;
-using UnityEngine.AddressableAssets;
 using Core.Items;
+using Core.Character;
+using System;
 
 namespace Core
 {
     public class WeaponGiver : NetworkBehaviour
     {
-        [SerializeField] private AssetReference _defualtWeapon;
+        [SerializeField] private Useble _defualtWeapon;
+        [SerializeField] private Useble _defualtAddctionalWeapon;
 
-        private PlayerCharacterSpawner _playerSpawner;
-
-        [Inject]
-        public void ZInit(PlayerCharacterSpawner playerSpawner) 
-        {
-            _playerSpawner = playerSpawner;
-        }
+        [Inject] private PlayerCharacterSpawner _playerSpawner;
 
         private void OnEnable()
         {
@@ -29,22 +25,35 @@ namespace Core
             _playerSpawner.PlayerSpawned -= OnPlayerSpawn;
         }
 
-        private void OnPlayerSpawn(NetworkObject player)
+        private async void OnPlayerSpawn(NetworkObject player)
         {
-            if (NetworkManager.IsServer == false)
+            try 
             {
-                return;
-            }
+                if (NetworkManager.IsServer == false)
+                {
+                    return;
+                }
 
-            UsebleReference weaponReference = player.GetComponent<UsebleReference>();
-            
-            Addressables.InstantiateAsync(_defualtWeapon).Completed += (handle) => 
+                await Awaitable.NextFrameAsync();
+
+                Inventory playerInventory = player.GetComponent<Inventory>();
+
+                Useble mainWeapon = Instantiate(_defualtWeapon);
+                mainWeapon.NetworkObject.SpawnWithOwnership(player.OwnerClientId);
+                mainWeapon.NetworkObject.TrySetParent(player);
+                playerInventory.MainWeapon.Item = mainWeapon;
+
+                Useble addictionalWeapon = Instantiate(_defualtAddctionalWeapon);
+                addictionalWeapon.NetworkObject.SpawnWithOwnership(player.OwnerClientId);
+                addictionalWeapon.NetworkObject.TrySetParent(player);
+                playerInventory.AddictionalWeapon.Item = addictionalWeapon;
+
+                playerInventory.SelectWeapon(mainWeapon);
+            }
+            catch (Exception ex) 
             {
-                Useble useble = handle.Result.GetComponent<Useble>();
-                useble.NetworkObject.SpawnWithOwnership(player.OwnerClientId);
-                useble.NetworkObject.TrySetParent(player);
-                weaponReference.Value = useble;
-            };
+                Debug.LogException(ex);
+            }
         }
     }
 }

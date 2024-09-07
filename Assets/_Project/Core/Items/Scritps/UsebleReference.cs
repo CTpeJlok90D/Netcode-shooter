@@ -27,7 +27,7 @@ namespace Core.Items
         public override void OnDestroy()
         {
             base.OnDestroy();
-            if (NetworkManager.IsServer)
+            if (NetworkManager.IsServer && Value != null)
             {
                 Value.SetOwner(null);
             }

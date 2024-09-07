@@ -37,7 +37,7 @@ namespace Core
 
         private void Awake()
         {
-            _weaponReference = new();
+            _weaponReference = new(writePerm: NetworkVariableWritePermission.Owner);
         }
 
         protected virtual void Start()
@@ -65,8 +65,8 @@ namespace Core
         {
             if (_weaponReference.Value.TryGet(out NetworkObject networkObject))
             {
-                T weapon = networkObject.GetComponent<T>();
-                _reference = weapon;
+                T component = networkObject.GetComponent<T>();
+                _reference = component;
                 Changed?.Invoke(_reference);
             }
         }

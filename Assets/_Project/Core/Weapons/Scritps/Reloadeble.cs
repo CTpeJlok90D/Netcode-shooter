@@ -1,10 +1,10 @@
 using UnityEngine;
 using Unity.Netcode;
-using System;
 
 namespace Core.Weapons
 {
     [RequireComponent(typeof(Firearm))]
+    [Icon("Assets/_Project/Core/Weapons/Editor/Icons/icons8-rifle-magazine-96.png")]
     public abstract class Reloadeble : NetworkBehaviour
     {
         public abstract bool CanReload { get; }

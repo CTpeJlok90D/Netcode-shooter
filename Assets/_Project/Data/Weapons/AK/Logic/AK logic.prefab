@@ -77,7 +77,7 @@ MonoBehaviour:
   <Useble>k__BackingField: {fileID: 8649480988456476197}
   <AttackPattern>k__BackingField: {fileID: 11400000, guid: 08f885bae0377054b9a00ed8e7c9c6f8, type: 2}
   <AttackPoint>k__BackingField: {fileID: 144354099385312287}
-  <RateOfFire>k__BackingField: 6
+  <RateOfFire>k__BackingField: 10
   <BullectConfiguration>k__BackingField:
     ShotPoint: {fileID: 144354099385312287}
     Damage: 34
@@ -97,7 +97,7 @@ MonoBehaviour:
         outWeight: 0.39527586
       - serializedVersion: 3
         time: 6.2416663
-        value: 5.09434
+        value: 2.5
         inSlope: 0.45859042
         outSlope: 0.45859042
         tangentMode: 0
@@ -113,24 +113,15 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 0.16365874
-        outSlope: 0.16365874
+        inSlope: -0
+        outSlope: -0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
-        outWeight: 0.09583333
-      - serializedVersion: 3
-        time: 2.8454905
-        value: 1.5693817
-        inSlope: 0.8180253
-        outSlope: 0.8180253
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.46221837
-        outWeight: 0.33333334
+        outWeight: 0.40416664
       - serializedVersion: 3
         time: 6.977419
-        value: 5.151519
+        value: 1.5
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -232,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Clip>k__BackingField: {fileID: 1195425673046501753}
-  <ReloadTime>k__BackingField: 3
+  <ReloadTime>k__BackingField: 2.5
   <Firearm>k__BackingField: {fileID: 9103513635288412745}
   <ReloadSpeedModifier>k__BackingField:
     AccelerationClamp: 8
@@ -776,8 +767,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NoiseProfile: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
   PivotOffset: {x: 0, y: 0, z: 0}
-  AmplitudeGain: 0.15
-  FrequencyGain: 5
+  AmplitudeGain: 0.3
+  FrequencyGain: 10
   m_NoiseOffsets: {x: -76.187744, y: -137.73145, z: 180.93527}
 --- !u!114 &4483138700713033363
 MonoBehaviour:

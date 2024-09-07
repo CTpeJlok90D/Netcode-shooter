@@ -2,6 +2,7 @@ using Core.Items;
 using Core.Weapons;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 namespace Core.PlayerCharacterInput
 {
@@ -85,12 +86,18 @@ namespace Core.PlayerCharacterInput
 
         private void OnAttackStart(InputAction.CallbackContext context)
         {
-            Weapon.StartAttack();
+            if (Weapon != null) 
+            {
+                Weapon.StartAttack();
+            }
         }
 
         private void OnAttackStop(InputAction.CallbackContext context)
         {
-            Weapon.StopAttack();
+            if (Weapon != null) 
+            {
+                Weapon.StopAttack();
+            }
         }
 
         private void OnAimStart(InputAction.CallbackContext context)
@@ -108,10 +115,6 @@ namespace Core.PlayerCharacterInput
                 if (_aimable != null) 
                 {
                     _aimable.IsAiming = false;
-                }
-                if (Weapon.IsUsing)
-                {
-                    Weapon.StopAttack();
                 }
             }
         }

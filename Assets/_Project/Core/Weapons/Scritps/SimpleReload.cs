@@ -27,6 +27,8 @@ namespace Core.Weapons
         public override event ReloadStartedListener ReloadStarted;
         public override event ReloadStartedListener ReloadCompleted;
 
+        private bool _isDestroyed;
+
         public override void Reload()
         {
             ReloadRPC();
@@ -43,6 +45,12 @@ namespace Core.Weapons
             _ = ReloadTask();
         }
 
+        public override void OnDestroy()
+        {
+            base.OnDestroy();
+            _isDestroyed = true;
+        }
+
         private async Task ReloadTask()
         {
             try
@@ -57,6 +65,7 @@ namespace Core.Weapons
                 IsReloading = true;
                 
                 await Awaitable.WaitForSecondsAsync(ReloadTime);
+                if (_isDestroyed) { return; }
                 
                 ReloadCompleted?.Invoke();
                 IsReloading = false;

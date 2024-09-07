@@ -15,6 +15,7 @@ namespace Data.Weapons
 
         public override bool CanAttack => _reloadeble == null || _reloadeble.NeedReload == false;
         public override event Action Attacked;
+        public override event Action DryFire;
 
         public override void AfterInit()
         {
@@ -24,6 +25,12 @@ namespace Data.Weapons
 
         public override void OnAttackStart()
         {
+            if (_reloadeble != null && _reloadeble.NeedReload)
+            {
+                DryFire?.Invoke();
+                return;
+            }
+
             _isAttacking = true;
             _ = Attack();
         }

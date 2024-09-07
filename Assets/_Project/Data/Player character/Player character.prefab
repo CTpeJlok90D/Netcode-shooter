@@ -162,9 +162,9 @@ GameObject:
   - component: {fileID: 1741463110037645879}
   - component: {fileID: 7154112559620649688}
   - component: {fileID: 1278818024213386281}
-  - component: {fileID: 3916443008878361478}
   - component: {fileID: 6749273491302452541}
   - component: {fileID: 7200740267245400832}
+  - component: {fileID: 6430013052426982609}
   m_Layer: 0
   m_Name: Player character
   m_TagString: Untagged
@@ -191,6 +191,7 @@ Transform:
   - {fileID: 7530053894040183459}
   - {fileID: 4551713494891318055}
   - {fileID: 8245933000127644357}
+  - {fileID: 1098704229564633862}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1741463110037645879
@@ -237,8 +238,8 @@ MonoBehaviour:
     AccelerationClamp: 16
     MaxSpeedClamp: 1.75
   _sprintModifier:
-    AccelerationClamp: 32
-    MaxSpeedClamp: 7
+    AccelerationClamp: 16
+    MaxSpeedClamp: 5
   <StopSpeed>k__BackingField: 32
 --- !u!114 &1278818024213386281
 MonoBehaviour:
@@ -253,20 +254,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Max>k__BackingField: 100
---- !u!114 &3916443008878361478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1079721851605697074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 624444269d378434b8c40c57323a9f2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _reference: {fileID: 0}
-  <IsItemOwer>k__BackingField: 1
 --- !u!143 &6749273491302452541
 CharacterController:
   m_ObjectHideFlags: 0
@@ -304,6 +291,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21c1c816efe639946bcd83eaa02dde84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6430013052426982609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079721851605697074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c48038de2b1b34441898d7af2e89e69e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Selected>k__BackingField: {fileID: 6198218407531342893}
+  <MainWeapon>k__BackingField:
+    Reference: {fileID: 8306908647335468162}
+    <AcceptebleItemType>k__BackingField: 0
+  <AddictionalWeapon>k__BackingField:
+    Reference: {fileID: 7587531403875091374}
+    <AcceptebleItemType>k__BackingField: 1
 --- !u!1 &1312653517544116481
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,6 +321,7 @@ GameObject:
   - component: {fileID: 2694680410066561699}
   - component: {fileID: 1072521766827415673}
   - component: {fileID: 9068224273627314047}
+  - component: {fileID: 5789615078503306540}
   m_Layer: 0
   m_Name: Input
   m_TagString: Untagged
@@ -371,7 +378,114 @@ MonoBehaviour:
   <AttackActionReference>k__BackingField: {fileID: -7104074180865497991, guid: 70ba757677ab9dc42907df84dea6130c, type: 3}
   <AimActionReference>k__BackingField: {fileID: -7248509417084279724, guid: 70ba757677ab9dc42907df84dea6130c, type: 3}
   <ReloadActionReference>k__BackingField: {fileID: -1792695646828756224, guid: 70ba757677ab9dc42907df84dea6130c, type: 3}
-  <UsableReference>k__BackingField: {fileID: 3916443008878361478}
+  <UsableReference>k__BackingField: {fileID: 6198218407531342893}
+--- !u!114 &5789615078503306540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312653517544116481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecfd386e745c6e544b8e08c07b5c20b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Inventory>k__BackingField: {fileID: 6430013052426982609}
+  <SelectMainWeaponActionReference>k__BackingField: {fileID: 6716287860461391406, guid: 70ba757677ab9dc42907df84dea6130c, type: 3}
+  <SelectAddictionalWeaponActionReference>k__BackingField: {fileID: 3411195462640556382, guid: 70ba757677ab9dc42907df84dea6130c, type: 3}
+--- !u!1 &1417377841303572379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7128962561317368281}
+  - component: {fileID: 8306908647335468162}
+  m_Layer: 0
+  m_Name: Main weapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7128962561317368281
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417377841303572379}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1098704229564633862}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8306908647335468162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417377841303572379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 624444269d378434b8c40c57323a9f2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _reference: {fileID: 0}
+  <IsItemOwer>k__BackingField: 1
+--- !u!1 &1856771726479089166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4972092303882445662}
+  - component: {fileID: 6198218407531342893}
+  m_Layer: 0
+  m_Name: Selected useble item
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4972092303882445662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856771726479089166}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1098704229564633862}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6198218407531342893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856771726479089166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 624444269d378434b8c40c57323a9f2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _reference: {fileID: 0}
+  <IsItemOwer>k__BackingField: 1
 --- !u!1 &2263927221569597501
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,6 +862,52 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &4158224537649719929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4403484605282231239}
+  - component: {fileID: 7587531403875091374}
+  m_Layer: 0
+  m_Name: Addictional weapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4403484605282231239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4158224537649719929}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1098704229564633862}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7587531403875091374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4158224537649719929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 624444269d378434b8c40c57323a9f2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _reference: {fileID: 0}
+  <IsItemOwer>k__BackingField: 1
 --- !u!1 &4366392967348233519
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,8 +952,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81119df36544d9f439415630a5ea947f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <UsebleReference>k__BackingField: {fileID: 3916443008878361478}
+  <UsebleReference>k__BackingField: {fileID: 6198218407531342893}
   <Parent>k__BackingField: {fileID: 6261502419325787393}
+--- !u!1 &4511053339260365785
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1098704229564633862}
+  m_Layer: 0
+  m_Name: Inventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1098704229564633862
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4511053339260365785}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4972092303882445662}
+  - {fileID: 7128962561317368281}
+  - {fileID: 4403484605282231239}
+  m_Father: {fileID: 4340426756337962540}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4656198110654150190
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,7 +1089,7 @@ MonoBehaviour:
   _deathTriggerName: Death
   _deathDirectionXName: Death direction X
   _deathDirectionZName: Death direction Z
-  _destroyDelay: 60
+  _destroyDelay: 5
   _objectsToDestroyOnDeath:
   - {fileID: 7085463131503747845}
   - {fileID: 471091812255572774}
@@ -1036,7 +1230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 3053563601382479469}
   _shakeTime: 0.13
-  _usebleReference: {fileID: 3916443008878361478}
+  _usebleReference: {fileID: 6198218407531342893}
   _weapon: {fileID: 0}
   _weaponReference: {fileID: 0}
 --- !u!1 &5905749938524613575
@@ -1285,7 +1479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 498b066397eebdf44821ff5068902752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <UsebleReference>k__BackingField: {fileID: 3916443008878361478}
+  <UsebleReference>k__BackingField: {fileID: 6198218407531342893}
   <Animator>k__BackingField: {fileID: 3803723209650400053}
   <AttackTriggerName>k__BackingField: Attacked
 --- !u!1 &8283839916529798110
@@ -1561,8 +1755,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NoiseProfile: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
   PivotOffset: {x: 0, y: 0, z: 0}
-  AmplitudeGain: 0.15
-  FrequencyGain: 5
+  AmplitudeGain: 0.3
+  FrequencyGain: 10
   m_NoiseOffsets: {x: -76.187744, y: -137.73145, z: 180.93527}
 --- !u!114 &9118910474087670942
 MonoBehaviour:
@@ -1956,7 +2150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c22c92e790409a42b1e1f392bae9bb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <UsebleReference>k__BackingField: {fileID: 3916443008878361478}
+  <UsebleReference>k__BackingField: {fileID: 6198218407531342893}
   <Animator>k__BackingField: {fileID: 3803723209650400053}
   <IsAimingBoolParametrName>k__BackingField: Is aiming
 --- !u!114 &5296491738654964106
@@ -1986,7 +2180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9058864c7cec58a429e6b25ad10ca78f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <UsebleReference>k__BackingField: {fileID: 3916443008878361478}
+  <UsebleReference>k__BackingField: {fileID: 6198218407531342893}
   <Animator>k__BackingField: {fileID: 3803723209650400053}
   <ReloadStartedTriggerName>k__BackingField: Reload
   <ReloadCompletedTriggerName>k__BackingField: Reload completed

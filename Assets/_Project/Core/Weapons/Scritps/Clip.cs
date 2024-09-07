@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Core.Weapons
 {   
     [RequireComponent(typeof(Firearm))]
-    public class Clip : NetworkBehaviour
+    public sealed class Clip : NetworkBehaviour
     {
         [field: SerializeField] public Firearm Firearm { get; private set; }
         [field: SerializeField] public NetVariable<int> Ammo { get; private set; }

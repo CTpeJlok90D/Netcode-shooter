@@ -1,3 +1,4 @@
+using Core.Character;
 using Core.Characters;
 using Core.Items;
 using Core.PlayerSpawning;
@@ -13,17 +14,11 @@ namespace UI.Sightmark
         [field: SerializeField] public Animator Animator { get; private set; }
         [field: SerializeField] public InputActionReference MousePosition { get; private set; }
         [field: SerializeField] private string FloatValueName { get; set; } = "Spread";
-        public PlayerCharacterSpawner PlayerSpawner { get; private set; }
+        [field: Inject] public PlayerCharacterSpawner PlayerSpawner { get; private set; }
 
         private TopdownCharacter _character;
         private UsebleReference _usebleReference;
         private Firearm _firearm;
-
-        [Inject]
-        private void ZInit(PlayerCharacterSpawner spawner) 
-        {
-            PlayerSpawner = spawner;
-        }
 
         private void Awake()
         {
@@ -35,7 +30,7 @@ namespace UI.Sightmark
         {
             if (PlayerSpawner.LocalPlayerCharacter != null)
             {
-                _usebleReference = PlayerSpawner.LocalPlayerCharacter.GetComponent<UsebleReference>();
+                _usebleReference = PlayerSpawner.LocalPlayerCharacter.GetComponent<Inventory>().Selected;
                 _character = PlayerSpawner.LocalPlayerCharacter.GetComponent<TopdownCharacter>();
 
                 _firearm = null;

@@ -10,6 +10,7 @@ namespace Core.Weapons
         
         private List<Action> _attackedListeners = new();
         private List<Bullet.ShotListener> _shotListeners = new();
+        private List<Action> _dryFireListeners = new();
 
         public delegate void WeaponChangedListener(Firearm weapon);
         public event WeaponChangedListener Changed;
@@ -28,6 +29,7 @@ namespace Core.Weapons
                     oldOwner = _weapon.Owner;
                     _weapon.Attacked -= OnAttack;
                     _weapon.AttackPattern.Bullet.Shot -= OnShot;
+                    _weapon.AttackPattern.DryFire -= OnDryFire;
                 }
 
                 _weapon = value;
@@ -36,6 +38,7 @@ namespace Core.Weapons
                 {
                     _weapon.Attacked += OnAttack;
                     _weapon.AttackPattern.Bullet.Shot += OnShot;
+                    _weapon.AttackPattern.DryFire += OnDryFire;
                 }
 
                 Changed?.Invoke(_weapon);
@@ -46,6 +49,12 @@ namespace Core.Weapons
         {
             add => _attackedListeners.Add(value);
             remove => _attackedListeners.Remove(value);
+        }
+
+        public event Action DryFire 
+        {
+            add => _dryFireListeners.Add(value);
+            remove => _dryFireListeners.Remove(value);
         }
 
         public event Bullet.ShotListener Shot
@@ -60,6 +69,7 @@ namespace Core.Weapons
             {
                 _weapon.Attacked += OnAttack;
                 _weapon.AttackPattern.Bullet.Shot += OnShot;
+                _weapon.AttackPattern.DryFire += OnDryFire;
             }
         }
 
@@ -69,6 +79,15 @@ namespace Core.Weapons
             {
                 _weapon.Attacked -= OnAttack;
                 _weapon.AttackPattern.Bullet.Shot -= OnShot;
+                _weapon.AttackPattern.DryFire -= OnDryFire;
+            }
+        }
+
+        private void OnDryFire()
+        {
+            foreach (Action action in _dryFireListeners)
+            {
+                action.Invoke();
             }
         }
 

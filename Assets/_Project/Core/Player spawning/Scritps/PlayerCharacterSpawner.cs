@@ -68,10 +68,13 @@ namespace Core.PlayerSpawning
                 Addressables.InstantiateAsync(_playerCharacter_PREFAB).Completed += (handle) => 
                 {
                     NetworkObject spawnedPlayer = handle.Result.GetComponent<NetworkObject>();
-                    spawnedPlayer.SpawnWithOwnership(playerID);
+
                     Transform spawnedTransform = _spawnPoints[Random.Range(0, _spawnPoints.Length)];
                     Vector3 spawnedPosition = spawnedTransform.position;
-                    SpawnPlayerSucscessCallback_RPC(spawnedPlayer, spawnedPosition);
+                    spawnedPlayer.transform.position = spawnedPosition;
+                    spawnedPlayer.SpawnWithOwnership(playerID);
+
+                    SpawnPlayerSucscessCallback_RPC(spawnedPlayer);
                 };
                 return;
             }
@@ -79,7 +82,7 @@ namespace Core.PlayerSpawning
         }
 
         [Rpc(SendTo.Everyone)]
-        private void SpawnPlayerSucscessCallback_RPC(NetworkObjectReference spawnedPlayer, Vector3 spawnedPosition)
+        private void SpawnPlayerSucscessCallback_RPC(NetworkObjectReference spawnedPlayer)
         {
             if (spawnedPlayer.TryGet(out NetworkObject character) == false)
             {
@@ -88,7 +91,6 @@ namespace Core.PlayerSpawning
 
             if (character.IsOwner)
             {
-                character.transform.position = spawnedPosition;
                 LocalPlayerCharacter = character;
             }
             

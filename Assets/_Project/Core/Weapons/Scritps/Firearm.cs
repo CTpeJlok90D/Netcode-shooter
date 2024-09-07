@@ -7,7 +7,7 @@ using System;
 namespace Core.Weapons
 {
     [RequireComponent(typeof(Useble))]
-    public class Firearm : NetworkBehaviour
+    public sealed class Firearm : NetworkBehaviour
     {
         [field: SerializeField] public Useble Useble { get; private set; }
         [field: SerializeField] public FirearmAttackPattern AttackPattern { get; private set; }
@@ -90,7 +90,7 @@ namespace Core.Weapons
         private void OnUsageStart() => StartAttack();
         private void StartAttack()
         {
-            if (AttackPattern.CanAttack == false || TopdownCharacter.Speed > MaxSpeedToAttack)
+            if (TopdownCharacter.Speed > MaxSpeedToAttack)
             {
                 return;
             }

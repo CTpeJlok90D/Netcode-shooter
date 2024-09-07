@@ -43,9 +43,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0.8867924, g: 0.85730034, b: 0.13803846, a: 1}
+  m_Color: {r: 0.6698113, g: 0.40101933, b: 0.041073352, a: 1}
   m_Intensity: 1
-  m_Range: 25
+  m_Range: 65
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -203,7 +203,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.25
+  m_Time: 0.05
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -213,7 +213,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.03921655
+        value: 0.025
         inSlope: -0.033349097
         outSlope: -0.033349097
         tangentMode: 0
@@ -234,7 +234,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.86528504, b: 0, a: 1}
+      key0: {r: 1, g: 0.5615011, b: 0, a: 1}
       key1: {r: 0.8679245, g: 0.7394877, b: 0.1514774, a: 0.44705883}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -317,6 +317,7 @@ MonoBehaviour:
   _gameObjects:
   - {fileID: 5806402242249638152}
   _autoFillRenderers: 0
+  <Colliders>k__BackingField: []
 --- !u!135 &980183980040725680
 SphereCollider:
   m_ObjectHideFlags: 0
