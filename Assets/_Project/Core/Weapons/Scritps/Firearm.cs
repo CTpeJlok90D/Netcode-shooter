@@ -7,8 +7,10 @@ using System;
 namespace Core.Weapons
 {
     [RequireComponent(typeof(Useble))]
+    [RequireComponent(typeof(DestroyEvent))]
     public sealed class Firearm : NetworkBehaviour
     {
+        [field: SerializeField] public DestroyEvent DestroyEvent { get; private set; }
         [field: SerializeField] public Useble Useble { get; private set; }
         [field: SerializeField] public FirearmAttackPattern AttackPattern { get; private set; }
         [field: SerializeField] public Transform AttackPoint { get; private set; }
@@ -103,5 +105,12 @@ namespace Core.Weapons
         {
             AttackPattern.OnAttackStop();
         }
+
+#if UNITY_EDITOR
+        private void OnValidate()
+        {
+            DestroyEvent ??= GetComponent<DestroyEvent>();
+        }
+#endif
     }
 }

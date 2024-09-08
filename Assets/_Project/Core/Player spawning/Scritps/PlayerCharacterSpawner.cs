@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Core.Characters;
 using Core.Players;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.AI;
+using UnityEngine.TextCore.Text;
 using Random = UnityEngine.Random;
 
 namespace Core.PlayerSpawning
@@ -19,7 +20,8 @@ namespace Core.PlayerSpawning
         private bool _gotCallback;
 
         public NetworkObject LocalPlayerCharacter { get; private set; }
-        public delegate void PlayerSpawnedListener(NetworkObject player);
+
+        public delegate void PlayerSpawnedListener(NetworkObject player, ulong playerOwner);
         public event PlayerSpawnedListener PlayerSpawned;
         
         public override void OnNetworkDespawn()
@@ -65,16 +67,14 @@ namespace Core.PlayerSpawning
             NetworkObject playersObject = _playersObjects.GetValueOrDefault(playerID);
             if (playersObject == null)
             {
-                Addressables.InstantiateAsync(_playerCharacter_PREFAB).Completed += (handle) => 
+                Transform spawnedTransform = _spawnPoints[Random.Range(0, _spawnPoints.Length)];
+                Vector3 spawnedPosition = spawnedTransform.position;
+                Addressables.InstantiateAsync(_playerCharacter_PREFAB, spawnedPosition, Quaternion.identity).Completed += (handle) => 
                 {
                     NetworkObject spawnedPlayer = handle.Result.GetComponent<NetworkObject>();
 
-                    Transform spawnedTransform = _spawnPoints[Random.Range(0, _spawnPoints.Length)];
-                    Vector3 spawnedPosition = spawnedTransform.position;
-                    spawnedPlayer.transform.position = spawnedPosition;
                     spawnedPlayer.SpawnWithOwnership(playerID);
-
-                    SpawnPlayerSucscessCallback_RPC(spawnedPlayer);
+                    SpawnPlayerSucscessCallback_RPC(spawnedPlayer, playerID, spawnedPosition);
                 };
                 return;
             }
@@ -82,20 +82,35 @@ namespace Core.PlayerSpawning
         }
 
         [Rpc(SendTo.Everyone)]
-        private void SpawnPlayerSucscessCallback_RPC(NetworkObjectReference spawnedPlayer)
+        private void SpawnPlayerSucscessCallback_RPC(NetworkObjectReference spawnedPlayer, ulong ownerClientID, Vector3 spawnPosition)
         {
             if (spawnedPlayer.TryGet(out NetworkObject character) == false)
             {
                 return;
             }
 
-            if (character.IsOwner)
+            if (NetworkManager.LocalClientId == ownerClientID)
             {
                 LocalPlayerCharacter = character;
+                DelayedWarp(character, spawnPosition);
             }
             
-            PlayerSpawned?.Invoke(spawnedPlayer);
+            PlayerSpawned?.Invoke(spawnedPlayer, ownerClientID);
             _gotCallback = true;
+        }
+
+        private async void DelayedWarp(NetworkObject character, Vector3 position) 
+        {
+            try 
+            {
+                await Awaitable.NextFrameAsync();
+                TopdownCharacter topdownCharacter = character.GetComponent<TopdownCharacter>();
+                topdownCharacter.Warp(position);
+            }
+            catch (Exception e)
+            {
+                Debug.LogException(e);
+            }
         }
 
         

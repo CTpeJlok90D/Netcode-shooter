@@ -25,7 +25,7 @@ namespace Core
             _playerSpawner.PlayerSpawned -= OnPlayerSpawn;
         }
 
-        private async void OnPlayerSpawn(NetworkObject player)
+        private async void OnPlayerSpawn(NetworkObject player, ulong playerOwner)
         {
             try 
             {
@@ -39,16 +39,18 @@ namespace Core
                 Inventory playerInventory = player.GetComponent<Inventory>();
 
                 Useble mainWeapon = Instantiate(_defualtWeapon);
-                mainWeapon.NetworkObject.SpawnWithOwnership(player.OwnerClientId);
+                mainWeapon.NetworkObject.SpawnWithOwnership(playerOwner);
                 mainWeapon.NetworkObject.TrySetParent(player);
-                playerInventory.MainWeapon.Item = mainWeapon;
+                
 
                 Useble addictionalWeapon = Instantiate(_defualtAddctionalWeapon);
-                addictionalWeapon.NetworkObject.SpawnWithOwnership(player.OwnerClientId);
+                addictionalWeapon.NetworkObject.SpawnWithOwnership(playerOwner);
                 addictionalWeapon.NetworkObject.TrySetParent(player);
-                playerInventory.AddictionalWeapon.Item = addictionalWeapon;
 
-                playerInventory.SelectWeapon(mainWeapon);
+                playerInventory.MainWeapon.Reference.SetFromServer(mainWeapon.NetworkObject);
+                playerInventory.Selected.SetFromServer(mainWeapon.NetworkObject);
+                playerInventory.AddictionalWeapon.Reference.SetFromServer(addictionalWeapon.NetworkObject);
+
             }
             catch (Exception ex) 
             {

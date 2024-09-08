@@ -33,20 +33,24 @@ namespace Data.Weapons
                 return;
             }
 
-            if (NetworkManager.Singleton.IsServer)
-            {
-                _ = Bullet.Shoot(Firearm.TopdownCharacter.gameObject, Firearm.TopdownCharacter.Velocity.magnitude, Firearm.TopdownCharacter.LookPoint);
-                Attacked?.Invoke();
-            }
+            _ = Bullet.Shoot(Firearm.TopdownCharacter.gameObject, Firearm.TopdownCharacter.Velocity.magnitude, Firearm.TopdownCharacter.LookPoint);
+            Attacked?.Invoke();
             _ = DelayBetweenAttacks();
         }
 
         private async Task DelayBetweenAttacks()
         {
-            _isStoppedByDelay = true;
-            float delay = 1 / Firearm.RateOfFire;
-            await Awaitable.WaitForSecondsAsync(delay);
-            _isStoppedByDelay = false;
+            try 
+            {
+                _isStoppedByDelay = true;
+                float delay = 1 / Firearm.RateOfFire;
+                await Awaitable.WaitForSecondsAsync(delay);
+                _isStoppedByDelay = false;
+            }
+            catch (Exception e) 
+            {
+                Debug.LogException(e);
+            }
         }
     }
 }

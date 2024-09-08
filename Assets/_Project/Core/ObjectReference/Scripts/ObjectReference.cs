@@ -12,7 +12,7 @@ namespace Core
 
         private List<Action> _attackedListeners = new();
 
-        private NetVariable<NetworkObjectReference> _weaponReference;
+        private NetVariable<NetworkObjectReference> _netReference;
 
         public T Value
         {
@@ -22,7 +22,7 @@ namespace Core
             }
             set
             {
-                _weaponReference.Value = new(value.NetworkObject);
+                _netReference.Value = new(value.NetworkObject);
             }
         }
 
@@ -37,22 +37,22 @@ namespace Core
 
         private void Awake()
         {
-            _weaponReference = new(writePerm: NetworkVariableWritePermission.Owner);
+            _netReference = new(writePerm: NetworkVariableWritePermission.Owner);
         }
 
-        protected virtual void Start()
+        public void Start()
         {
             ValidateValue();
         }
 
         protected virtual void OnEnable()
         {
-            _weaponReference.ValueChanged += OnValueChange;
+            _netReference.ValueChanged += OnValueChange;
         }
 
         protected virtual void OnDisable()
         {
-            _weaponReference.ValueChanged -= OnValueChange;
+            _netReference.ValueChanged -= OnValueChange;
         }
 
         private void OnValueChange(NetworkObjectReference previousValue, NetworkObjectReference newValue)
@@ -63,7 +63,7 @@ namespace Core
 
         private void ValidateValue()
         {
-            if (_weaponReference.Value.TryGet(out NetworkObject networkObject))
+            if (_netReference.Value.TryGet(out NetworkObject networkObject))
             {
                 T component = networkObject.GetComponent<T>();
                 _reference = component;
@@ -74,6 +74,17 @@ namespace Core
         protected virtual void OnValueChange()
         {
 
+        }
+
+        public void SetFromServer(NetworkObject reference) 
+        {
+            SendReference_RPC(reference);
+        }
+
+        [Rpc(SendTo.Owner, RequireOwnership = false)]
+        private void SendReference_RPC(NetworkObjectReference reference) 
+        {
+            _netReference.Value = reference;
         }
     }
 }

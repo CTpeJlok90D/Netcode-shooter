@@ -83,7 +83,7 @@ namespace Core.Characters
             _isCrouching = new(writePerm: NetworkVariableWritePermission.Owner);
             _isSprinting = new(writePerm: NetworkVariableWritePermission.Owner);
             SpeedModificators = new(writePerm: NetworkVariableWritePermission.Owner);
-            _ownerPosition = new(writePerm: NetworkVariableWritePermission.Owner);
+            _ownerPosition = new(transform.position, writePerm: NetworkVariableWritePermission.Owner);
         }
 
         private void OnEnable()
@@ -241,6 +241,12 @@ namespace Core.Characters
         public void Move(Vector3 destination)
         {
             _moveDirection.Value = destination;
+        }
+
+        public void Warp(Vector3 destination) 
+        {
+            _ownerPosition.Value = destination;
+            transform.position = destination;
         }
 
         public void SetLookPosition(Vector3 lookPosition)

@@ -1,4 +1,3 @@
-using Core.Characters;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;

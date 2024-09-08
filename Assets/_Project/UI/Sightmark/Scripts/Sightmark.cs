@@ -56,7 +56,7 @@ namespace UI.Sightmark
             BulletConfiguration config = _firearm.BullectConfiguration;
             Bullet bullet = _firearm.AttackPattern.Bullet;
 
-            float spread = bullet.SprayDistance(_character.Velocity.magnitude);
+            float spread = bullet.GetSpreadRange(_character.gameObject, _character.Velocity.magnitude, _character.LookPoint);
             Animator.SetFloat(FloatValueName, spread);
             transform.position = MousePosition.action.ReadValue<Vector2>();
         }

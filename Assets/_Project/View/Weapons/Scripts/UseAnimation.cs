@@ -28,10 +28,7 @@ namespace View.Items
 
         private void OnWeaponChange(Useble useble)
         {
-            useble.View.UseAnimation.LoadAssetAsync<AnimatorOverrideController>().Completed += (handle) => 
-            {
-                Animator.runtimeAnimatorController = handle.Result;
-            };
+            Animator.runtimeAnimatorController = useble.View.UseAnimation;
         }
     }
 }

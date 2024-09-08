@@ -10,6 +10,7 @@ namespace Core.Weapons
         public abstract bool CanReload { get; }
         public abstract bool NeedReload { get; }
         public abstract void Reload();
+        public abstract void BrokeReload();
 
         public delegate void ReloadStartedListener();
         public abstract event ReloadStartedListener ReloadStarted;

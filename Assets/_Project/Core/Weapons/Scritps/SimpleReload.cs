@@ -28,6 +28,7 @@ namespace Core.Weapons
         public override event ReloadStartedListener ReloadCompleted;
 
         private bool _isDestroyed;
+        private bool _isReloadIsBroked;
 
         public override void Reload()
         {
@@ -65,20 +66,34 @@ namespace Core.Weapons
                 IsReloading = true;
                 
                 await Awaitable.WaitForSecondsAsync(ReloadTime);
-                if (_isDestroyed) { return; }
-                
-                ReloadCompleted?.Invoke();
-                IsReloading = false;
+                if (_isDestroyed || _isReloadIsBroked) 
+                {
+                    _isReloadIsBroked = false;
+                    return; 
+                }
 
                 if (IsOwner)
                 {
                     Character.SpeedModificators.Remove(ReloadSpeedModifier);
                     Clip.Ammo.Value = Clip.MaxAmmo;
                 }
+               
+                ReloadCompleted?.Invoke();
+                IsReloading = false;
             }
             catch (Exception e)
             {
                 Debug.LogException(e);
+            }
+        }
+
+        public override void BrokeReload()
+        {
+            if (IsReloading) 
+            {
+                Character.SpeedModificators.Remove(ReloadSpeedModifier);
+                IsReloading = false;
+                _isReloadIsBroked = true;
             }
         }
     }

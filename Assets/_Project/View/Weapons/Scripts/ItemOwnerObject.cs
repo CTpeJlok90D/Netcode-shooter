@@ -1,6 +1,4 @@
-using Core.Items;
 using Core.Weapons;
-using System;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -21,6 +19,7 @@ namespace View.Items
             if (_weaponReference.Value != null) 
             {
                 _weaponReference.Value.Useble.OwnerChanged += OnOwnerChange;
+                _weaponReference.Value.DestroyEvent.Destroyed += OnTargetDestroy;
             }
             if (didStart) 
             {
@@ -39,6 +38,7 @@ namespace View.Items
             if (_weaponReference.Value != null)
             {
                 _weaponReference.Value.Useble.OwnerChanged -= OnOwnerChange;
+                _weaponReference.Value.DestroyEvent.Destroyed -= OnTargetDestroy;
             }
         }
 
@@ -47,13 +47,23 @@ namespace View.Items
             if (_weaponReference.Value != null)
             {
                 _weaponReference.Value.Useble.OwnerChanged -= OnOwnerChange;
+                _weaponReference.Value.DestroyEvent.Destroyed -= OnTargetDestroy;
             }
             _weapon = _weaponReference.Value;
             if (_weaponReference.Value != null)
             {
                 _weaponReference.Value.Useble.OwnerChanged += OnOwnerChange;
+                _weaponReference.Value.DestroyEvent.Destroyed += OnTargetDestroy;
             }
             ValidateActive();
+        }
+
+        private void OnTargetDestroy(GameObject destroyedObject)
+        {
+            foreach (GameObject gameObject in _targets)
+            {
+                gameObject.SetActive(false);
+            }
         }
 
         private void OnOwnerChange()
@@ -65,6 +75,10 @@ namespace View.Items
         {
             if (_weaponReference.Value == null)
             {
+                foreach (GameObject gameObject in _targets)
+                {
+                    gameObject.SetActive(false);
+                }
                 return;
             }
 

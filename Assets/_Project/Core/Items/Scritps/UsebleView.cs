@@ -8,6 +8,6 @@ namespace Core.Items
     public class UsebleView
     {
         [field: SerializeField] public AssetReference ViewReference { get; private set; }
-        [field: SerializeField] public AssetReference UseAnimation { get; private set; }
+        [field: SerializeField] public AnimatorOverrideController UseAnimation { get; private set; }
     }
 }

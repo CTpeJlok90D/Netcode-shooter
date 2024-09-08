@@ -17,7 +17,18 @@ namespace Core.Weapons
         private Task _spraySpreadFallRate;
         private bool _isDestroyed;
 
-        public float SprayDistance(float senderSpeed) => _configuration.SpreadPerSpeed.Evaluate(senderSpeed) + _configuration.SpreadPerSpray.Evaluate(_bulletNumber);
+        public float GetSpreadRange(GameObject sender, float senderSpeed, Vector3 targetPoint) 
+        {
+            float spreadDistance = _configuration.SpreadPerSpeed.Evaluate(senderSpeed) + _configuration.SpreadPerSpray.Evaluate(_bulletNumber);
+            float spreadRange = spreadDistance / 2;
+
+            float distanceToEndTarget = Vector3.Distance(sender.transform.position, targetPoint);
+            float spreadMultyply = _configuration.SpreadPerDistance.Evaluate(distanceToEndTarget);
+
+            spreadRange *= spreadMultyply;
+
+            return spreadRange;
+        }
 
         public Bullet(BulletConfiguration configuration)
         {
@@ -34,8 +45,8 @@ namespace Core.Weapons
         {
             try
             {
-                float spreadDistance = SprayDistance(senderSpeed);
-                float spreadRange = spreadDistance/2;
+                float spreadRange = GetSpreadRange(sender, senderSpeed, targetPoint);
+
                 Vector3 spreadOffcet = new Vector3(NetRandom.Range(-spreadRange, spreadRange), NetRandom.Range(-spreadRange, spreadRange), NetRandom.Range(-spreadRange, spreadRange));
 
                 Transform shotTransform = _configuration.ShotPoint;

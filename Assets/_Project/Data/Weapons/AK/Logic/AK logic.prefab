@@ -131,6 +131,30 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+    SpreadPerDistance:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.25
+        inSlope: 0.1125
+        outSlope: 0.1125
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 20
+        value: 2.5
+        inSlope: 0.1125
+        outSlope: 0.1125
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
     SpraySpreadFallRate: 4
   <MaxSpeedToAttack>k__BackingField: 4
 --- !u!114 &8926895601526066485
@@ -174,12 +198,8 @@ MonoBehaviour:
       m_SubObjectGUID: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    <UseAnimation>k__BackingField:
-      m_AssetGUID: 441a9017adfa30340844d46959269e85
-      m_SubObjectName: 
-      m_SubObjectGUID: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
+    <UseAnimation>k__BackingField: {fileID: 22100000, guid: 441a9017adfa30340844d46959269e85, type: 2}
+  <ItemType>k__BackingField: 0
 --- !u!114 &3669564695648176113
 MonoBehaviour:
   m_ObjectHideFlags: 0

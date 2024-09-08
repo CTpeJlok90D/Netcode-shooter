@@ -305,10 +305,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Selected>k__BackingField: {fileID: 6198218407531342893}
   <MainWeapon>k__BackingField:
-    Reference: {fileID: 8306908647335468162}
+    <Reference>k__BackingField: {fileID: 8306908647335468162}
     <AcceptebleItemType>k__BackingField: 0
   <AddictionalWeapon>k__BackingField:
-    Reference: {fileID: 7587531403875091374}
+    <Reference>k__BackingField: {fileID: 7587531403875091374}
     <AcceptebleItemType>k__BackingField: 1
 --- !u!1 &1312653517544116481
 GameObject:
