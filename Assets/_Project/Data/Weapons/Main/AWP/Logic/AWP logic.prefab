@@ -270,8 +270,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Firearm>k__BackingField: {fileID: 9103513635288412745}
   <Ammo>k__BackingField:
-    m_InternalValue: 7
-  <MaxAmmo>k__BackingField: 7
+    m_InternalValue: 5
+  <MaxAmmo>k__BackingField: 5
   <AmmoConsumptionPetAttack>k__BackingField: 1
 --- !u!114 &54858614713577387
 MonoBehaviour:
