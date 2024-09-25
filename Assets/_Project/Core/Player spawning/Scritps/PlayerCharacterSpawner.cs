@@ -6,31 +6,34 @@ using Core.Players;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.TextCore.Text;
 using Random = UnityEngine.Random;
 
 namespace Core.PlayerSpawning
-{  
+{
     public class PlayerCharacterSpawner : NetworkBehaviour
     {
+        public delegate void PlayerSpawnedListener(SpawnConfiguration spawnConfiguration);
+
+
         [SerializeField] private AssetReference _playerCharacter_PREFAB;
+
         [SerializeField] private Transform[] _spawnPoints;
 
         private Dictionary<ulong, NetworkObject> _playersObjects = new();
+
         private bool _gotCallback;
 
         public NetworkObject LocalPlayerCharacter { get; private set; }
 
-        public delegate void PlayerSpawnedListener(NetworkObject player, ulong playerOwner);
         public event PlayerSpawnedListener PlayerSpawned;
-        
+
         public override void OnNetworkDespawn()
         {
             base.OnNetworkDespawn();
             LocalPlayerCharacter = null;
         }
 
-        public async Task<NetworkObject> SpawnLocalPlayer()
+        public async Task<NetworkObject> SpawnLocalPlayer(SpawnConfiguration SpawnConfiguration)
         {
             try
             {
@@ -40,7 +43,7 @@ namespace Core.PlayerSpawning
                 }
 
                 ulong localClientId = Player.Local.OwnerClientId;
-                SpawnPlayer_RPC(localClientId);
+                SpawnPlayer_RPC(SpawnConfiguration);
                 
                 while (_gotCallback == false)
                 {
@@ -56,25 +59,28 @@ namespace Core.PlayerSpawning
         }
 
         [Rpc(SendTo.Server, RequireOwnership = false)]
-        private void SpawnPlayer_RPC(ulong playerID)
+        private void SpawnPlayer_RPC(SpawnConfiguration config)
         {
-            if (_playersObjects.ContainsKey(playerID) == false)
+            if (_playersObjects.ContainsKey(config.playerID) == false)
             {
-                _playersObjects.Add(playerID, null);
+                _playersObjects.Add(config.playerID, null);
             }
             
-            BaseRpcTarget sender = RpcTarget.Single(playerID, RpcTargetUse.Persistent);
-            NetworkObject playersObject = _playersObjects.GetValueOrDefault(playerID);
+            BaseRpcTarget sender = RpcTarget.Single(config.playerID, RpcTargetUse.Persistent);
+            NetworkObject playersObject = _playersObjects.GetValueOrDefault(config.playerID);
             if (playersObject == null)
             {
                 Transform spawnedTransform = _spawnPoints[Random.Range(0, _spawnPoints.Length)];
-                Vector3 spawnedPosition = spawnedTransform.position;
-                Addressables.InstantiateAsync(_playerCharacter_PREFAB, spawnedPosition, Quaternion.identity).Completed += (handle) => 
+                config.spawnPosition = spawnedTransform.position;
+
+                Addressables.InstantiateAsync(_playerCharacter_PREFAB, config.spawnPosition, Quaternion.identity).Completed += (handle) => 
                 {
                     NetworkObject spawnedPlayer = handle.Result.GetComponent<NetworkObject>();
+                    spawnedPlayer.SpawnWithOwnership(config.playerID);
 
-                    spawnedPlayer.SpawnWithOwnership(playerID);
-                    SpawnPlayerSucscessCallback_RPC(spawnedPlayer, playerID, spawnedPosition);
+                    config.player = spawnedPlayer;
+
+                    SpawnPlayerSucscessCallback_RPC(config);
                 };
                 return;
             }
@@ -82,20 +88,20 @@ namespace Core.PlayerSpawning
         }
 
         [Rpc(SendTo.Everyone)]
-        private void SpawnPlayerSucscessCallback_RPC(NetworkObjectReference spawnedPlayer, ulong ownerClientID, Vector3 spawnPosition)
+        private void SpawnPlayerSucscessCallback_RPC(SpawnConfiguration config)
         {
-            if (spawnedPlayer.TryGet(out NetworkObject character) == false)
+            if (config.player.TryGet(out NetworkObject character) == false)
             {
                 return;
             }
 
-            if (NetworkManager.LocalClientId == ownerClientID)
+            if (NetworkManager.LocalClientId == config.playerID)
             {
                 LocalPlayerCharacter = character;
-                DelayedWarp(character, spawnPosition);
+                DelayedWarp(character, config.spawnPosition);
             }
-            
-            PlayerSpawned?.Invoke(spawnedPlayer, ownerClientID);
+
+            PlayerSpawned?.Invoke(config);
             _gotCallback = true;
         }
 

@@ -1,4 +1,3 @@
-using System;
 using Core.Weapons;
 using UnityEngine;
 
@@ -8,10 +7,11 @@ namespace View.Items
     {
         [field: SerializeField] private WeaponLocalReference WeaponLocalReference { get; set; }
         [field: SerializeField] public AudioSource ReloadAudioSource { get; private set; }
+        [field: SerializeField] public AudioSource ReloadCompletedSource { get; private set; }
         
         public Reloadeble Reloadeble { get; private set; }
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             if (WeaponLocalReference.Value != null)
             {
@@ -22,23 +22,26 @@ namespace View.Items
             if (Reloadeble != null)
             {
                 Reloadeble.ReloadStarted += OnReload;
+                Reloadeble.ReloadCompleted += OnReloadComplete;
             }
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             WeaponLocalReference.Changed -= OnWeaponChange;   
             if (Reloadeble != null)
             {
                 Reloadeble.ReloadStarted -= OnReload;
+                Reloadeble.ReloadCompleted -= OnReloadComplete;
             }
         }
 
-        private void OnWeaponChange(Firearm weapon)
+        protected virtual void OnWeaponChange(Firearm weapon)
         {
             if (Reloadeble != null)
             {
                 Reloadeble.ReloadStarted -= OnReload;
+                Reloadeble.ReloadCompleted -= OnReloadComplete;
             }
 
             Reloadeble = weapon.GetComponent<Reloadeble>();
@@ -46,12 +49,24 @@ namespace View.Items
             if (Reloadeble != null)
             {
                 Reloadeble.ReloadStarted += OnReload;
+                Reloadeble.ReloadCompleted += OnReloadComplete;
+            }
+        }
+
+        private void OnReloadComplete()
+        {
+            if (ReloadCompletedSource != null) 
+            {
+                ReloadCompletedSource.Play();
             }
         }
 
         private void OnReload()
         {
-            ReloadAudioSource.Play();
+            if (ReloadAudioSource != null)
+            {
+                ReloadAudioSource?.Play();
+            }
         }
     }
 }

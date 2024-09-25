@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: ec0b4bc76da2d394fa2e9bce1db30604
   m_SerializeEntries:
+  - m_GUID: 022e54681a8d72547be6ed714d13ebf6
+    m_Address: Assets/_Project/Data/Weapons/Main/AWP/View/AWP View.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 08c637b65155dd749b4aac2043c8a759
     m_Address: Assets/_Project/Data/Weapons/Pistol/View/AK View.prefab
     m_ReadOnly: 0
@@ -67,6 +72,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5ae9d14ed3ae0b14e9915220cb3a3216
     m_Address: Assets/_Project/Data/Weapons/Pistol/Pistol animations override.overrideController
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5ba1c333d3d2746409bcede660875f2f
+    m_Address: Assets/_Project/Data/Weapons/Pistols/Revolver/View/Revolver View.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -135,6 +145,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aaef68cfaa7fd1446bbd161567e2e962
+    m_Address: Assets/_Project/Data/Weapons/Main/Shotgun/View/Shotgun view.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ad2ab49d0a2a17148bd51c93d977bdbc
     m_Address: Assets/_Project/Data/Weapons/AK/MuzzleFlash01.prefab
     m_ReadOnly: 0
@@ -167,6 +182,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d4eec6c7d9ab2be46ab949e75ee0717a
     m_Address: Assets/_Project/Tests/Materials/Ground/Blue_Ground_Prototype.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d60736eec21dca049825c7ced1040405
+    m_Address: Assets/_Project/Data/Weapons/M16/View/M16 View.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

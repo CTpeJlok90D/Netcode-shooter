@@ -1,7 +1,6 @@
 using System;
 using System.Threading.Tasks;
 using Core.Weapons;
-using Unity.Netcode;
 using UnityEngine;
 
 namespace Data.Weapons

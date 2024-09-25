@@ -18,7 +18,7 @@ namespace Core.Weapons
             MaxSpeedClamp = 1.5f,
         };
 
-        public bool IsReloading { get; private set; } = false;
+        public bool IsReloading { get; protected set; } = false;
         public TopdownCharacter Character => Firearm.TopdownCharacter;
 
         public override bool CanReload => Clip.Ammo.Value < Clip.MaxAmmo && IsReloading == false;
@@ -27,14 +27,27 @@ namespace Core.Weapons
         public override event ReloadStartedListener ReloadStarted;
         public override event ReloadStartedListener ReloadCompleted;
 
-        private bool _isDestroyed;
-        private bool _isReloadIsBroked;
+        protected bool IsDestroyed;
+        protected bool IsReloadIsBroked;
 
         public override void Reload()
         {
             ReloadRPC();
         }
 
+        protected virtual void OnEnable() 
+        {
+            Firearm.Attacked += OnAttacked;
+        }
+        protected virtual void OnDisable() 
+        {
+            Firearm.Attacked -= OnAttacked;
+        }
+
+        private void OnAttacked()
+        {
+            BrokeReload();
+        }
 
         [Rpc(SendTo.Everyone)]
         private void ReloadRPC()
@@ -49,10 +62,10 @@ namespace Core.Weapons
         public override void OnDestroy()
         {
             base.OnDestroy();
-            _isDestroyed = true;
+            IsDestroyed = true;
         }
 
-        private async Task ReloadTask()
+        protected virtual async Task ReloadTask()
         {
             try
             {
@@ -66,9 +79,9 @@ namespace Core.Weapons
                 IsReloading = true;
                 
                 await Awaitable.WaitForSecondsAsync(ReloadTime);
-                if (_isDestroyed || _isReloadIsBroked) 
+                if (IsDestroyed || IsReloadIsBroked) 
                 {
-                    _isReloadIsBroked = false;
+                    IsReloadIsBroked = false;
                     return; 
                 }
 
@@ -93,7 +106,7 @@ namespace Core.Weapons
             {
                 Character.SpeedModificators.Remove(ReloadSpeedModifier);
                 IsReloading = false;
-                _isReloadIsBroked = true;
+                IsReloadIsBroked = true;
             }
         }
     }

@@ -78,8 +78,10 @@ namespace Core.Weapons
                         {
                             return;
                         }
-                        
-                        DamageInfo info = new(sender.gameObject, _configuration.Damage);
+
+                        float damage = _configuration.Damage * _configuration.DamageMultiplyPerDistance.Evaluate(hitInfo.distance);
+
+                        DamageInfo info = new(sender.gameObject, damage);
                         health.DealDamage(info);
                     }
                 }

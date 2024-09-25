@@ -8,6 +8,7 @@ namespace Core.Weapons
     {
         public Transform ShotPoint;
         public float Damage;
+        public AnimationCurve DamageMultiplyPerDistance;
         public float MaxDistance;
         public float Speed;
         public AnimationCurve SpreadPerSpeed;

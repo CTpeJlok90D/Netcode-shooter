@@ -1,5 +1,4 @@
 using Core.PlayerSpawning;
-using Unity.Netcode;
 using UnityEngine;
 using Zenject;
 
@@ -14,6 +13,7 @@ namespace Core.Characters
         private void Update()
         {
             bool active = PlayerCharacterSpawner.LocalPlayerCharacter != null;
+
             if (Inverse) 
             {
                 active = !active;

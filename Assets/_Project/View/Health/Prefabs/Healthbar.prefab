@@ -201,4 +201,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fillImage: {fileID: 780909020858745603}
   _health: {fileID: 0}
-  _oneHealthPointSize: 0.01

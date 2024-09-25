@@ -1,0 +1,1061 @@
+fileFormatVersion: 2
+guid: e439e07dce9b0134baf501a359bca3c9
+importerOverride:
+  nativeImporterType: 2089858483
+  scriptedImporterType:
+    serializedVersion: 2
+    Hash: b10b55a1aa6a1aa32521bc0cab59632e
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 3d94679da24d3a7439f11d3855e9b66e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  multiSpriteImportData: []
+  layeredSpriteImportData:
+  - name: Scope
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 272
+      y: 70
+      width: 67
+      height: 21
+    spriteID: 3f4c777b82056f649bddd17f0b6399fc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 272, y: 70}
+    spritePosition: {x: 234, y: 311}
+  - name: Suppressor
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 449
+      y: 49
+      width: 51
+      height: 13
+    spriteID: 0a8dc22bc2f16c9428d09139c3bf076f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 449, y: 49}
+    spritePosition: {x: 242, y: 287}
+  - name: Granede 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 269
+      width: 29
+      height: 49
+    spriteID: 753acedbe0c0e244493d00f155a96143
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 269}
+    spritePosition: {x: 333, y: 287}
+  - name: Granede 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 474
+      y: 114
+      width: 27
+      height: 39
+    spriteID: d9e0452be6fa2314fb6849e3acfcfdb2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 474, y: 114}
+    spritePosition: {x: 381, y: 287}
+  - name: Granade 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 326
+      width: 26
+      height: 50
+    spriteID: cd99cca7383023e4f814e47eb88c28e9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 326}
+    spritePosition: {x: 427, y: 287}
+  - name: Ammo 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 347
+      y: 70
+      width: 13
+      height: 27
+    spriteID: bc504ff0788630f4990bb94908ccbeff
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 347, y: 70}
+    spritePosition: {x: 484, y: 287}
+  - name: Ammo 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 462
+      width: 12
+      height: 41
+    spriteID: 59694cfebaa1329428744cf9211d62c4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 462}
+    spritePosition: {x: 501, y: 287}
+  - name: Ammo 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 26
+      y: 384
+      width: 13
+      height: 56
+    spriteID: 0a3e6e8c24fe3b24ba0a1cc4d288099e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 26, y: 384}
+    spritePosition: {x: 517, y: 287}
+  - name: Ammo 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 384
+      width: 14
+      height: 70
+    spriteID: 729c1404f65d1df429ac6f506b3ce898
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 384}
+    spritePosition: {x: 534, y: 287}
+  - name: Rocket
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 205
+      y: 114
+      width: 157
+      height: 23
+    spriteID: ae1e3f278fb1a7749a111f9585196a4e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 205, y: 114}
+    spritePosition: {x: 43, y: 235}
+  - name: Weapon 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 370
+      y: 114
+      width: 96
+      height: 36
+    spriteID: 25b41388ee56be246b6e431d423db0fd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 370, y: 114}
+    spritePosition: {x: 225, y: 224}
+  - name: Weapon 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 163
+      width: 79
+      height: 43
+    spriteID: 6cbf6adac4c5cbb488c038e3cc07dacb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 163}
+    spritePosition: {x: 43, y: 159}
+  - name: RPG
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 219
+      height: 58
+    spriteID: 841a2ec0572c24f41964952cc1e75ece
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 345, y: 213}
+  - name: Weapon 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 114
+      width: 89
+      height: 41
+    spriteID: a85343608c97236448248bd4e6f43251
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 114}
+    spritePosition: {x: 141, y: 160}
+  - name: Weapon 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 370
+      y: 163
+      width: 70
+      height: 37
+    spriteID: 316495785ab6ef342a972b45ac6d99da
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 370, y: 163}
+    spritePosition: {x: 254, y: 162}
+  - name: Weapon 5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 91
+      y: 163
+      width: 85
+      height: 39
+    spriteID: be548dfeaa3f1144983fabf9094b21b3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 91, y: 163}
+    spritePosition: {x: 351, y: 161}
+  - name: Weapon 6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 70
+      width: 106
+      height: 36
+    spriteID: c6a655b320f97a24e9d6d438f45a90ee
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 70}
+    spritePosition: {x: 465, y: 163}
+  - name: Weapon 7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 277
+      y: 163
+      width: 85
+      height: 35
+    spriteID: 38750824da96a4d44b9a01e4105ace3e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 277, y: 163}
+    spritePosition: {x: 37, y: 97}
+  - name: Weapon 8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 448
+      y: 163
+      width: 54
+      height: 34
+    spriteID: f86b8524b2f5472479441d13dfee44fb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 448, y: 163}
+    spritePosition: {x: 158, y: 98}
+  - name: Weapon 9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 184
+      y: 163
+      width: 85
+      height: 37
+    spriteID: 75d542ebae2aca94690774206e12faf5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 184, y: 163}
+    spritePosition: {x: 248, y: 96}
+  - name: Weapon 10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 199
+      y: 70
+      width: 65
+      height: 32
+    spriteID: d2988ed4f4b3d2e428978c4f992b476e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 199, y: 70}
+    spritePosition: {x: 365, y: 99}
+  - name: Weapon 11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 101
+      y: 114
+      width: 96
+      height: 38
+    spriteID: ed73b5b517b2cae43a62590fb093c857
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 101, y: 114}
+    spritePosition: {x: 468, y: 96}
+  - name: Weapon 12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 231
+      y: 4
+      width: 96
+      height: 43
+    spriteID: 442924accfddb5c409d63293f1c79471
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 231, y: 4}
+    spritePosition: {x: 468, y: 31}
+  - name: Weapon 13
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 335
+      y: 4
+      width: 106
+      height: 37
+    spriteID: c9dd89fed78f4a641be6b1f4da5d7e75
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 335, y: 4}
+    spritePosition: {x: 340, y: 34}
+  - name: Weapon 14
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 449
+      y: 4
+      width: 48
+      height: 37
+    spriteID: ec4f47a590c90504587a658e09bec997
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 449, y: 4}
+    spritePosition: {x: 257, y: 34}
+  - name: Weapon 15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 118
+      y: 70
+      width: 73
+      height: 35
+    spriteID: 542890eca28f36a43b22d4913c596ad6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 118, y: 70}
+    spritePosition: {x: 149, y: 35}
+  - name: Weapon 16
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 214
+      width: 69
+      height: 47
+    spriteID: a48c2bdd71142a94d8bbc63161c7f93a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 214}
+    spritePosition: {x: 45, y: 29}
+  spriteImportData: []
+  rigSpriteImportData: []
+  sharedRigSpriteImportData: []
+  mosaicSpriteImportData: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: iPhone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  padding: 4
+  spriteSizeExpand: 0
+  skeletonAssetReferenceID: 
+  pipeline: {instanceID: 0}
+  pipelineVersion: 
+  spritePackingTag: 
+  resliceFromLayer: 0
+  pSDLayerImportSetting: []
+  psdLayers:
+  - name: Scope
+    spriteName: Scope
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 3f4c777b82056f649bddd17f0b6399fc
+    layerID: 0
+    mosaicPosition: {x: 272, y: 70}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Suppressor
+    spriteName: Suppressor
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0a8dc22bc2f16c9428d09139c3bf076f
+    layerID: 1928769340
+    mosaicPosition: {x: 449, y: 49}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Granede 1
+    spriteName: Granede 1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 753acedbe0c0e244493d00f155a96143
+    layerID: 362477027
+    mosaicPosition: {x: 4, y: 269}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Granede 2
+    spriteName: Granede 2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d9e0452be6fa2314fb6849e3acfcfdb2
+    layerID: 362477026
+    mosaicPosition: {x: 474, y: 114}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Granade 3
+    spriteName: Granade 3
+    isGroup: 0
+    parentIndex: -1
+    spriteID: cd99cca7383023e4f814e47eb88c28e9
+    layerID: 362472933
+    mosaicPosition: {x: 4, y: 326}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Ammo 1
+    spriteName: Ammo 1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: bc504ff0788630f4990bb94908ccbeff
+    layerID: 1849244631
+    mosaicPosition: {x: 347, y: 70}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Ammo 2
+    spriteName: Ammo 2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 59694cfebaa1329428744cf9211d62c4
+    layerID: 283160690
+    mosaicPosition: {x: 4, y: 462}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Ammo 3
+    spriteName: Ammo 3
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0a3e6e8c24fe3b24ba0a1cc4d288099e
+    layerID: -1282923251
+    mosaicPosition: {x: 26, y: 384}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Ammo 4
+    spriteName: Ammo 4
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 729c1404f65d1df429ac6f506b3ce898
+    layerID: 1445960104
+    mosaicPosition: {x: 4, y: 384}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Rocket
+    spriteName: Rocket
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ae1e3f278fb1a7749a111f9585196a4e
+    layerID: -1273669126
+    mosaicPosition: {x: 205, y: 114}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Weapon 1
+    spriteName: Weapon 1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 25b41388ee56be246b6e431d423db0fd
+    layerID: 2044321671
+    mosaicPosition: {x: 370, y: 114}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Weapon 2
+    spriteName: Weapon 2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 6cbf6adac4c5cbb488c038e3cc07dacb
+    layerID: 1641037144
+    mosaicPosition: {x: 4, y: 163}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: RPG
+    spriteName: RPG
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 841a2ec0572c24f41964952cc1e75ece
+    layerID: 124732729
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Weapon 3
+    spriteName: Weapon 3
+    isGroup: 0
+    parentIndex: -1
+    spriteID: a85343608c97236448248bd4e6f43251
+    layerID: -1087846211
+    mosaicPosition: {x: 4, y: 114}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Weapon 4
+    spriteName: Weapon 4
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 316495785ab6ef342a972b45ac6d99da
+    layerID: -1491130738
+    mosaicPosition: {x: 370, y: 163}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Weapon 5
+    spriteName: Weapon 5
+    isGroup: 0
+    parentIndex: -1
+    spriteID: be548dfeaa3f1144983fabf9094b21b3
+    layerID: 74953203
+    mosaicPosition: {x: 91, y: 163}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Weapon 6
+    spriteName: Weapon 6
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c6a655b320f97a24e9d6d438f45a90ee
+    layerID: -328331324
+    mosaicPosition: {x: 4, y: 70}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Weapon 7
+    spriteName: Weapon 7
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 38750824da96a4d44b9a01e4105ace3e
+    layerID: 1237752617
+    mosaicPosition: {x: 277, y: 163}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Weapon 8
+    spriteName: Weapon 8
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f86b8524b2f5472479441d13dfee44fb
+    layerID: 834468090
+    mosaicPosition: {x: 448, y: 163}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Weapon 9
+    spriteName: Weapon 9
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 75d542ebae2aca94690774206e12faf5
+    layerID: -1894415265
+    mosaicPosition: {x: 184, y: 163}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Weapon 10
+    spriteName: Weapon 10
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d2988ed4f4b3d2e428978c4f992b476e
+    layerID: 181743319
+    mosaicPosition: {x: 199, y: 70}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Weapon 11
+    spriteName: Weapon 11
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ed73b5b517b2cae43a62590fb093c857
+    layerID: 181743320
+    mosaicPosition: {x: 101, y: 114}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Weapon 12
+    spriteName: Weapon 12
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 442924accfddb5c409d63293f1c79471
+    layerID: 181743321
+    mosaicPosition: {x: 231, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Weapon 13
+    spriteName: Weapon 13
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c9dd89fed78f4a641be6b1f4da5d7e75
+    layerID: 181743322
+    mosaicPosition: {x: 335, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Weapon 14
+    spriteName: Weapon 14
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ec4f47a590c90504587a658e09bec997
+    layerID: 181743315
+    mosaicPosition: {x: 449, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Weapon 15
+    spriteName: Weapon 15
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 542890eca28f36a43b22d4913c596ad6
+    layerID: 181743316
+    mosaicPosition: {x: 118, y: 70}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Weapon 16
+    spriteName: Weapon 16
+    isGroup: 0
+    parentIndex: -1
+    spriteID: a48c2bdd71142a94d8bbc63161c7f93a
+    layerID: 181743317
+    mosaicPosition: {x: 4, y: 214}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  mosaicPSDLayers: []
+  rigPSDLayers: []
+  sharedRigPSDLayers: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  spriteSizeExpandChanged: 0
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []

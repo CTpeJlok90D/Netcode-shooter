@@ -11,6 +11,9 @@ namespace Core.Characters
     {
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private CharacterHeightParametrs _heightParametrs;
+        [SerializeField] public float MaxEndurance { get; private set; } = 100;
+        [SerializeField] private AnimationCurve _enduranceRecovery;
+        [SerializeField] private float _enduranceExpenses = 25;
         [SerializeField] private SpeedModificator _defualtSpeed = new() 
         {
              AccelerationClamp = 8,
@@ -33,6 +36,7 @@ namespace Core.Characters
         private NetVariable<bool> _isCrouching;
         private NetVariable<bool> _isSprinting;
         private NetVariable<Vector3> _ownerPosition;
+        public NetVariable<float> Endurance { get; private set; }
         private float _positionInaccuracy = 0.75f;
         private const float _maxPositionIcacurracy = 1.5f;
         public float MaxSpeed { get; private set; }
@@ -84,6 +88,7 @@ namespace Core.Characters
             _isSprinting = new(writePerm: NetworkVariableWritePermission.Owner);
             SpeedModificators = new(writePerm: NetworkVariableWritePermission.Owner);
             _ownerPosition = new(transform.position, writePerm: NetworkVariableWritePermission.Owner);
+            Endurance = new(MaxEndurance, writePerm: NetworkVariableWritePermission.Owner);
         }
 
         private void OnEnable()
@@ -175,6 +180,27 @@ namespace Core.Characters
         {
             ValidatePosition();
             ValidateRotation();
+            if (IsOwner) 
+            {
+                ValidateEndurance();
+            }
+        }
+
+        private void ValidateEndurance() 
+        {
+            if (IsSprinting) 
+            {
+                Endurance.Value = Mathf.Clamp(Endurance.Value - _enduranceExpenses * Time.deltaTime, 0, MaxEndurance);
+
+                if (Endurance.Value == 0) 
+                {
+                    IsSprinting = false;
+                }
+
+                return;
+            }
+
+            Endurance.Value = Mathf.Clamp(Endurance.Value + _enduranceRecovery.Evaluate(Endurance.Value) * Time.deltaTime, 0, MaxEndurance);
         }
 
         private void ValidateRotation()

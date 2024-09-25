@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1233149941 &-2810287092633773834
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SCREAM_Male_B_03_mono_{-2810287092633773834}
+  m_AudioClip: {fileID: 8300000, guid: 61d32685dae92b748a1dd2eecb94e777, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-917121319533944759
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SCREAM_Male_B_02_mono_{-917121319533944759}
+  m_AudioClip: {fileID: 8300000, guid: b2c84d90d4d2b5149bd8305ef8d0a02f, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &927365252832450334
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SCREAM_Male_B_08_mono_{927365252832450334}
+  m_AudioClip: {fileID: 8300000, guid: e9bde03749862de47bc6b300d71b15bf, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &1343911895413863973
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SCREAM_Male_B_04_mono_{1343911895413863973}
+  m_AudioClip: {fileID: 8300000, guid: 3e86cffdf142a8246a9542ee8eaeb50a, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &1474836608715453651
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SCREAM_Male_B_06_mono_{1474836608715453651}
+  m_AudioClip: {fileID: 8300000, guid: 0d3d51e68ed6d5b4093483ea53abf3d7, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &1577768725194901923
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SCREAM_Male_B_07_mono_{1577768725194901923}
+  m_AudioClip: {fileID: 8300000, guid: 89689ceb18361ae4bac60d78166da654, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &5808941950547788064
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SCREAM_Male_B_05_mono_{5808941950547788064}
+  m_AudioClip: {fileID: 8300000, guid: b86e471c36779c144b3c83a346aacb9c, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1307931743 &6418180475301049370
+AudioRandomContainer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Death screams
+  m_Volume: 0
+  m_Pitch: 0
+  m_AutomaticTriggerTime: 0
+  m_LoopCount: 1
+  m_VolumeRandomizationRange: {x: 0, y: 0}
+  m_PitchRandomizationRange: {x: 0, y: 0}
+  m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
+  m_LoopCountRandomizationRange: {x: 0, y: 0}
+  m_Elements:
+  - {fileID: 8861805750289717692}
+  - {fileID: -917121319533944759}
+  - {fileID: -2810287092633773834}
+  - {fileID: 1343911895413863973}
+  - {fileID: 5808941950547788064}
+  - {fileID: 1474836608715453651}
+  - {fileID: 1577768725194901923}
+  - {fileID: 927365252832450334}
+  m_AvoidRepeatingLast: 0
+  m_PlaybackMode: 2
+  m_TriggerMode: 0
+  m_AutomaticTriggerMode: 1
+  m_LoopMode: 2
+  m_VolumeRandomizationEnabled: 0
+  m_PitchRandomizationEnabled: 0
+  m_AutomaticTriggerTimeRandomizationEnabled: 0
+  m_LoopCountRandomizationEnabled: 0
+--- !u!1233149941 &8861805750289717692
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SCREAM_Male_B_01_mono_{8861805750289717692}
+  m_AudioClip: {fileID: 8300000, guid: 42230f4edbef5a44ea59a6e5094700b2, type: 3}
+  m_Volume: 0
+  m_Enabled: 1

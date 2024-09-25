@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1233149941 &-5613633500051393887
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FIREARM_Assault_Rifle_Model_01b_Fire_Single_RR3_stereo_{-5613633500051393887}
+  m_AudioClip: {fileID: 8300000, guid: c823a406af2d68c42b4a118def348076, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-5549170851092325033
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FIREARM_Assault_Rifle_Model_01b_Fire_Single_RR1_stereo_{-5549170851092325033}
+  m_AudioClip: {fileID: 8300000, guid: d22c5d7d5974cb74eba98d0719fa2d67, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &6146077912389229888
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FIREARM_Assault_Rifle_Model_01b_Fire_Single_RR2_stereo_{6146077912389229888}
+  m_AudioClip: {fileID: 8300000, guid: ca1828437bdc5c44bb894ea7016e8e46, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1307931743 &6418180475301049370
+AudioRandomContainer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M16 Shot
+  m_Volume: 0
+  m_Pitch: 550
+  m_AutomaticTriggerTime: 0
+  m_LoopCount: 1
+  m_VolumeRandomizationRange: {x: 0, y: 0}
+  m_PitchRandomizationRange: {x: -10, y: 10}
+  m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
+  m_LoopCountRandomizationRange: {x: 0, y: 0}
+  m_Elements:
+  - {fileID: -5549170851092325033}
+  - {fileID: 6146077912389229888}
+  - {fileID: -5613633500051393887}
+  m_AvoidRepeatingLast: 0
+  m_PlaybackMode: 2
+  m_TriggerMode: 0
+  m_AutomaticTriggerMode: 1
+  m_LoopMode: 2
+  m_VolumeRandomizationEnabled: 0
+  m_PitchRandomizationEnabled: 1
+  m_AutomaticTriggerTimeRandomizationEnabled: 0
+  m_LoopCountRandomizationEnabled: 0

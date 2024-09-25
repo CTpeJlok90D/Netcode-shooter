@@ -2,9 +2,11 @@
     "name": "View.Health",
     "rootNamespace": "View.Health",
     "references": [
+        "GUID:58946ea638f53f54d9ccaa0cb6215515",
         "GUID:f06555f75b070af458a003d92f9efb00",
         "GUID:1491147abca9d7d4bb7105af628b223e",
-        "GUID:8101379b9e8a8f344890255408e36469"
+        "GUID:8101379b9e8a8f344890255408e36469",
+        "GUID:ae28a16eb31805a4891875609279641f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

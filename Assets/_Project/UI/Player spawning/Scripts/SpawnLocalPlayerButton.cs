@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using Core.PlayerSpawning;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -9,7 +10,10 @@ namespace UI.PlayerSpawning
 {
     public class SpawnLocalPlayerButton : MonoBehaviour
     {
-        [SerializeField] Button _button;
+        [SerializeField] private Button _button;
+
+        [Inject] private SpawnConfigurationContainer _container;
+
         private PlayerCharacterSpawner _playerSpawner;
 
         [Inject]
@@ -35,7 +39,12 @@ namespace UI.PlayerSpawning
             try
             {
                 _button.interactable = false;
-                await _playerSpawner.SpawnLocalPlayer();
+
+                SpawnConfiguration config = _container.SpawnConfiguration;
+                config.playerID = NetworkManager.Singleton.LocalClientId;
+                _container.SpawnConfiguration = config;
+
+                await _playerSpawner.SpawnLocalPlayer(_container.SpawnConfiguration);
                 _button.interactable = true;
             }
             catch (Exception e)
