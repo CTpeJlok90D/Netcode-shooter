@@ -81,7 +81,7 @@ MonoBehaviour:
   <RateOfFire>k__BackingField: 0.5
   <BullectConfiguration>k__BackingField:
     ShotPoint: {fileID: 144354099385312287}
-    Damage: 79
+    Damage: 100
     DamageMultiplyPerDistance:
       serializedVersion: 2
       m_Curve:
