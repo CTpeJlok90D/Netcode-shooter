@@ -5,9 +5,9 @@ using UnityEngine;
 
 namespace View.Items
 {
-    [RequireComponent(typeof(Rigidbody))]
-    [RequireComponent(typeof(NetworkTransform))]
-    [RequireComponent(typeof(NetworkObject))]
+    //[RequireComponent(typeof(Rigidbody))]
+    //[RequireComponent(typeof(NetworkTransform))]
+    //[RequireComponent(typeof(NetworkObject))]
     public class BulletHitRigidbody : NetworkBehaviour
     {
         [field: SerializeField] public Rigidbody Rigidbody { get; private set; }

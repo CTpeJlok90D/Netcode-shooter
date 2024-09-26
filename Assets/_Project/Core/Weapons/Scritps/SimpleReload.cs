@@ -46,7 +46,10 @@ namespace Core.Weapons
 
         private void OnAttacked()
         {
-            BrokeReload();
+            if (IsOwner) 
+            {
+                BrokeReload();
+            }
         }
 
         [Rpc(SendTo.Everyone)]

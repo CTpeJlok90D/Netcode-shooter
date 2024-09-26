@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace View.Items
 {
-    public class AttackMuzzleFlash : MonoBehaviour
+    public class AttackParticleSystemMuzzleFlash : MonoBehaviour
     {
         [SerializeField] private ParticleSystem _particleSystem;
         [SerializeField] private WeaponLocalReference _weaponReference;
@@ -12,6 +12,30 @@ namespace View.Items
         {
             _weaponReference.Attacked += OnAttack;
         }   
+
+        private void OnDisable()
+        {
+            _weaponReference.Attacked -= OnAttack;
+        }
+
+        private void OnAttack()
+        {
+            _particleSystem.Play();
+        }
+    }
+}
+
+namespace View.Items
+{
+    public class AttackVFXMuzzleFlash : MonoBehaviour
+    {
+        [SerializeField] private ParticleSystem _particleSystem;
+        [SerializeField] private  _weaponReference;
+
+        private void OnEnable()
+        {
+            _weaponReference.Attacked += OnAttack;
+        }
 
         private void OnDisable()
         {
