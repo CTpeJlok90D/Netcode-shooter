@@ -27,24 +27,4 @@ namespace View.Items
 
 namespace View.Items
 {
-    public class AttackVFXMuzzleFlash : MonoBehaviour
-    {
-        [SerializeField] private ParticleSystem _particleSystem;
-        [SerializeField] private  _weaponReference;
-
-        private void OnEnable()
-        {
-            _weaponReference.Attacked += OnAttack;
-        }
-
-        private void OnDisable()
-        {
-            _weaponReference.Attacked -= OnAttack;
-        }
-
-        private void OnAttack()
-        {
-            _particleSystem.Play();
-        }
-    }
 }
